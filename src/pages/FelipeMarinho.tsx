@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { useSlideNavigation } from "@/hooks/useSlideNavigation";
 import Slide from "@/components/presentation/Slide";
+import Slide00Capa from "@/components/presentation/Slide00Capa";
 import Slide01Abertura from "@/components/presentation/Slide01Abertura";
 import Slide02Legendarios from "@/components/presentation/Slide02Legendarios";
 import Slide03DoisPublicos from "@/components/presentation/Slide03DoisPublicos";
@@ -27,6 +28,7 @@ import Slide22Resumo from "@/components/presentation/Slide22Resumo";
 import Slide23CTA from "@/components/presentation/Slide23CTA";
 
 const slideComponents = [
+  null, // Slide 0 = Capa (rendered separately)
   Slide01Abertura, Slide02Legendarios, Slide03DoisPublicos, Slide04Escadinha,
   Slide05PresenteGratis, Slide06EmailsAutomaticos, Slide07ProdutoEntrada,
   Slide08ProgramaCompleto, Slide09ConsultoriaVIP, Slide10ComunidadeGG,
@@ -35,15 +37,15 @@ const slideComponents = [
   Slide19Numeros, Slide20Roadmap, Slide21Risco, Slide22Resumo, Slide23CTA,
 ];
 
-const TOTAL = slideComponents.length;
+const TOTAL = slideComponents.length; // 24
 
 const FelipeMarinho = () => {
-  const { current, next, prev, onTouchStart, onTouchEnd } = useSlideNavigation({ totalSlides: TOTAL });
+  const { current, next, prev, goTo, onTouchStart, onTouchEnd } = useSlideNavigation({ totalSlides: TOTAL });
   const slideRef = useRef<HTMLDivElement>(null);
   const [hasOverflow, setHasOverflow] = useState(false);
   const [scrolledDown, setScrolledDown] = useState(false);
 
-  const SlideContent = slideComponents[current];
+  const isCover = current === 0;
   const progress = ((current + 1) / TOTAL) * 100;
 
   // Check if slide content overflows
@@ -69,19 +71,23 @@ const FelipeMarinho = () => {
     return () => el.removeEventListener("scroll", onScroll);
   }, [current]);
 
+  const SlideContent = slideComponents[current];
+
   return (
     <div
       className="w-screen h-screen overflow-hidden relative bg-background"
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
     >
-      {/* Progress bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 h-[3px] bg-primary/20">
-        <div
-          className="h-full bg-primary transition-all duration-500"
-          style={{ width: `${progress}%` }}
-        />
-      </div>
+      {/* Progress bar (hidden on cover) */}
+      {!isCover && (
+        <div className="fixed top-0 left-0 right-0 z-50 h-[3px] bg-primary/20">
+          <div
+            className="h-full bg-primary transition-all duration-500"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+      )}
 
       {/* Slide */}
       <div
@@ -89,17 +95,21 @@ const FelipeMarinho = () => {
         ref={slideRef}
         className="w-full h-full overflow-y-auto animate-slide-transition"
       >
-        <Slide fullWidth>
-          <SlideContent />
-        </Slide>
+        {isCover ? (
+          <Slide00Capa onStart={() => goTo(1)} />
+        ) : (
+          <Slide fullWidth>
+            {SlideContent && <SlideContent />}
+          </Slide>
+        )}
       </div>
 
-      {/* Desktop side arrows (hidden on cover slide) */}
-      {current > 0 && (
+      {/* Desktop side arrows (hidden on cover) */}
+      {!isCover && (
         <>
           <button
             onClick={prev}
-            disabled={current === 0}
+            disabled={current <= 1}
             className="hidden md:flex fixed left-4 top-1/2 -translate-y-1/2 z-50 w-10 h-10 items-center justify-center rounded-full bg-white/5 border border-primary/20 text-foreground transition-all hover:bg-primary/15 disabled:opacity-0 disabled:pointer-events-none"
           >
             <ChevronLeft size={20} />
@@ -114,33 +124,37 @@ const FelipeMarinho = () => {
         </>
       )}
 
-      {/* Compact nav buttons (bottom-right, always visible) */}
-      <div className="fixed bottom-6 right-6 z-50 flex gap-2">
-        <button
-          onClick={prev}
-          disabled={current === 0}
-          className="w-9 h-9 flex items-center justify-center rounded-full border border-primary/25 bg-card/80 backdrop-blur-sm text-foreground transition-all disabled:opacity-30"
-        >
-          <ChevronLeft size={16} />
-        </button>
-        <button
-          onClick={next}
-          disabled={current === TOTAL - 1}
-          className="w-9 h-9 flex items-center justify-center rounded-full border border-primary/25 bg-card/80 backdrop-blur-sm text-foreground transition-all disabled:opacity-30"
-        >
-          <ChevronRight size={16} />
-        </button>
-      </div>
+      {/* Compact nav buttons (hidden on cover) */}
+      {!isCover && (
+        <div className="fixed bottom-6 right-6 z-50 flex gap-2">
+          <button
+            onClick={prev}
+            disabled={current <= 1}
+            className="w-9 h-9 flex items-center justify-center rounded-full border border-primary/25 bg-card/80 backdrop-blur-sm text-foreground transition-all disabled:opacity-30"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <button
+            onClick={next}
+            disabled={current === TOTAL - 1}
+            className="w-9 h-9 flex items-center justify-center rounded-full border border-primary/25 bg-card/80 backdrop-blur-sm text-foreground transition-all disabled:opacity-30"
+          >
+            <ChevronRight size={16} />
+          </button>
+        </div>
+      )}
 
-      {/* Slide counter (bottom-left) */}
-      <div className="fixed bottom-6 left-6 z-50">
-        <span className="text-sm text-muted-foreground">
-          {String(current + 1).padStart(2, "0")} / {String(TOTAL).padStart(2, "0")}
-        </span>
-      </div>
+      {/* Slide counter (hidden on cover) */}
+      {!isCover && (
+        <div className="fixed bottom-6 left-6 z-50">
+          <span className="text-sm text-muted-foreground">
+            {String(current + 1).padStart(2, "0")} / {String(TOTAL).padStart(2, "0")}
+          </span>
+        </div>
+      )}
 
       {/* Scroll indicator */}
-      {hasOverflow && !scrolledDown && (
+      {hasOverflow && !scrolledDown && !isCover && (
         <div className="fixed bottom-16 left-1/2 -translate-x-1/2 z-50 text-muted-foreground animate-bounce">
           <ChevronDown size={24} />
         </div>
