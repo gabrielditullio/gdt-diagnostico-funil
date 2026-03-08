@@ -9,7 +9,7 @@ interface SlideProps {
 const Slide = ({ children, className = "", fullWidth = false }: SlideProps) => {
   return (
     <section
-      className={`snap-slide min-h-screen flex flex-col items-center justify-center px-4 py-8 md:px-12 md:py-12 relative ${className}`}
+      className={`min-h-screen flex flex-col items-center justify-center px-4 py-8 md:px-12 md:py-12 relative ${className}`}
     >
       <div className={`w-full mx-auto flex-1 flex items-center justify-center ${fullWidth ? "max-w-6xl" : "max-w-3xl"}`}>
         {children}

@@ -1,6 +1,7 @@
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useRef, useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
+import { useSlideNavigation } from "@/hooks/useSlideNavigation";
 import Slide from "@/components/presentation/Slide";
-import ProgressDots from "@/components/presentation/ProgressDots";
 import Slide01Abertura from "@/components/presentation/Slide01Abertura";
 import Slide02Legendarios from "@/components/presentation/Slide02Legendarios";
 import Slide03DoisPublicos from "@/components/presentation/Slide03DoisPublicos";
@@ -25,72 +26,125 @@ import Slide21Risco from "@/components/presentation/Slide21Risco";
 import Slide22Resumo from "@/components/presentation/Slide22Resumo";
 import Slide23CTA from "@/components/presentation/Slide23CTA";
 
-const TOTAL_SLIDES = 23;
+const slideComponents = [
+  Slide01Abertura, Slide02Legendarios, Slide03DoisPublicos, Slide04Escadinha,
+  Slide05PresenteGratis, Slide06EmailsAutomaticos, Slide07ProdutoEntrada,
+  Slide08ProgramaCompleto, Slide09ConsultoriaVIP, Slide10ComunidadeGG,
+  Slide11FelipeCamila, Slide12Trafego, Slide13Site, Slide14MarcaPessoal,
+  Slide15TrekkingFit, Slide16Calendario, Slide17Youtube, Slide18Anuncios,
+  Slide19Numeros, Slide20Roadmap, Slide21Risco, Slide22Resumo, Slide23CTA,
+];
+
+const TOTAL = slideComponents.length;
 
 const FelipeMarinho = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const { current, next, prev, onTouchStart, onTouchEnd } = useSlideNavigation({ totalSlides: TOTAL });
+  const slideRef = useRef<HTMLDivElement>(null);
+  const [hasOverflow, setHasOverflow] = useState(false);
+  const [scrolledDown, setScrolledDown] = useState(false);
 
-  const scrollToSlide = useCallback((index: number) => {
-    const container = containerRef.current;
-    if (!container) return;
-    const slides = container.querySelectorAll(".snap-slide");
-    slides[index]?.scrollIntoView({ behavior: "smooth" });
-  }, []);
+  const SlideContent = slideComponents[current];
+  const progress = ((current + 1) / TOTAL) * 100;
 
+  // Check if slide content overflows
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-    const handleScroll = () => {
-      const scrollTop = container.scrollTop;
-      const slideHeight = container.clientHeight;
-      const index = Math.round(scrollTop / slideHeight);
-      setCurrentSlide(Math.min(index, TOTAL_SLIDES - 1));
-    };
-    container.addEventListener("scroll", handleScroll, { passive: true });
-    return () => container.removeEventListener("scroll", handleScroll);
-  }, []);
+    setScrolledDown(false);
+    const el = slideRef.current;
+    if (!el) return;
+    const check = () => setHasOverflow(el.scrollHeight > el.clientHeight + 20);
+    check();
+    const ro = new ResizeObserver(check);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [current]);
 
+  // Track scroll inside slide
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowDown" || e.key === " ") {
-        e.preventDefault();
-        scrollToSlide(Math.min(currentSlide + 1, TOTAL_SLIDES - 1));
-      } else if (e.key === "ArrowUp") {
-        e.preventDefault();
-        scrollToSlide(Math.max(currentSlide - 1, 0));
-      }
+    const el = slideRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      if (el.scrollTop > 10) setScrolledDown(true);
     };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentSlide, scrollToSlide]);
+    el.addEventListener("scroll", onScroll, { passive: true });
+    return () => el.removeEventListener("scroll", onScroll);
+  }, [current]);
 
   return (
-    <div ref={containerRef} className="snap-container">
-      <ProgressDots total={TOTAL_SLIDES} current={currentSlide} onNavigate={scrollToSlide} />
-      <Slide fullWidth><Slide01Abertura /></Slide>
-      <Slide fullWidth><Slide02Legendarios /></Slide>
-      <Slide fullWidth><Slide03DoisPublicos /></Slide>
-      <Slide fullWidth><Slide04Escadinha /></Slide>
-      <Slide fullWidth><Slide05PresenteGratis /></Slide>
-      <Slide fullWidth><Slide06EmailsAutomaticos /></Slide>
-      <Slide fullWidth><Slide07ProdutoEntrada /></Slide>
-      <Slide fullWidth><Slide08ProgramaCompleto /></Slide>
-      <Slide fullWidth><Slide09ConsultoriaVIP /></Slide>
-      <Slide fullWidth><Slide10ComunidadeGG /></Slide>
-      <Slide fullWidth><Slide11FelipeCamila /></Slide>
-      <Slide fullWidth><Slide12Trafego /></Slide>
-      <Slide fullWidth><Slide13Site /></Slide>
-      <Slide fullWidth><Slide14MarcaPessoal /></Slide>
-      <Slide fullWidth><Slide15TrekkingFit /></Slide>
-      <Slide fullWidth><Slide16Calendario /></Slide>
-      <Slide fullWidth><Slide17Youtube /></Slide>
-      <Slide fullWidth><Slide18Anuncios /></Slide>
-      <Slide fullWidth><Slide19Numeros /></Slide>
-      <Slide fullWidth><Slide20Roadmap /></Slide>
-      <Slide fullWidth><Slide21Risco /></Slide>
-      <Slide fullWidth><Slide22Resumo /></Slide>
-      <Slide fullWidth><Slide23CTA /></Slide>
+    <div
+      className="w-screen h-screen overflow-hidden relative bg-background"
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+    >
+      {/* Progress bar */}
+      <div className="fixed top-0 left-0 right-0 z-50 h-[3px] bg-primary/20">
+        <div
+          className="h-full bg-primary transition-all duration-500"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
+
+      {/* Slide */}
+      <div
+        key={current}
+        ref={slideRef}
+        className="w-full h-full overflow-y-auto animate-slide-transition"
+      >
+        <Slide fullWidth>
+          <SlideContent />
+        </Slide>
+      </div>
+
+      {/* Desktop side arrows (hidden on cover slide) */}
+      {current > 0 && (
+        <>
+          <button
+            onClick={prev}
+            disabled={current === 0}
+            className="hidden md:flex fixed left-4 top-1/2 -translate-y-1/2 z-50 w-10 h-10 items-center justify-center rounded-full bg-white/5 border border-primary/20 text-foreground transition-all hover:bg-primary/15 disabled:opacity-0 disabled:pointer-events-none"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={next}
+            disabled={current === TOTAL - 1}
+            className="hidden md:flex fixed right-4 top-1/2 -translate-y-1/2 z-50 w-10 h-10 items-center justify-center rounded-full bg-white/5 border border-primary/20 text-foreground transition-all hover:bg-primary/15 disabled:opacity-0 disabled:pointer-events-none"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </>
+      )}
+
+      {/* Compact nav buttons (bottom-right, always visible) */}
+      <div className="fixed bottom-6 right-6 z-50 flex gap-2">
+        <button
+          onClick={prev}
+          disabled={current === 0}
+          className="w-9 h-9 flex items-center justify-center rounded-full border border-primary/25 bg-card/80 backdrop-blur-sm text-foreground transition-all disabled:opacity-30"
+        >
+          <ChevronLeft size={16} />
+        </button>
+        <button
+          onClick={next}
+          disabled={current === TOTAL - 1}
+          className="w-9 h-9 flex items-center justify-center rounded-full border border-primary/25 bg-card/80 backdrop-blur-sm text-foreground transition-all disabled:opacity-30"
+        >
+          <ChevronRight size={16} />
+        </button>
+      </div>
+
+      {/* Slide counter (bottom-left) */}
+      <div className="fixed bottom-6 left-6 z-50">
+        <span className="text-sm text-muted-foreground">
+          {String(current + 1).padStart(2, "0")} / {String(TOTAL).padStart(2, "0")}
+        </span>
+      </div>
+
+      {/* Scroll indicator */}
+      {hasOverflow && !scrolledDown && (
+        <div className="fixed bottom-16 left-1/2 -translate-x-1/2 z-50 text-muted-foreground animate-bounce">
+          <ChevronDown size={24} />
+        </div>
+      )}
     </div>
   );
 };
