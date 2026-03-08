@@ -52,6 +52,15 @@ const PersonaCard = ({ persona, gradient, delay }: { persona: typeof marcos; gra
   </AnimateOnView>
 );
 
+const tableRows = [
+  { label: "Idade", marcos: "25-40 anos", thiago: "28-50 anos" },
+  { label: "Quer", marcos: "Shape de gigante. Ficar grande, definido, admirado.", thiago: "Completar o Legendários com segurança e orgulho." },
+  { label: "Onde está", marcos: "Instagram fitness, YouTube de treino, fã de artistas com shape", thiago: "Grupos de igreja, WhatsApp de Legendários, Instagram cristão" },
+  { label: "Maior medo", marcos: '"Minha genética não ajuda, nunca vou ter resultado"', thiago: '"Vou passar mal na montanha e sair carregado"' },
+  { label: "Desculpa que dá", marcos: '"Treino online não funciona igual a presencial"', thiago: '"Consigo me preparar sozinho, é só caminhar mais"' },
+  { label: "Como convencer", marcos: '"Se o Léo treina na estrada entre shows e mantém esse shape, funciona pra qualquer rotina."', thiago: '"Em janeiro de 2025, um homem morreu no retiro. Preparação específica não é opcional."' },
+];
+
 const Slide03DoisPublicos = () => {
   return (
     <div className="w-full space-y-5 md:space-y-8">
@@ -90,6 +99,55 @@ const Slide03DoisPublicos = () => {
           delay={200}
         />
       </div>
+
+      <AnimateOnView delay={300}>
+        <div className="rounded-xl border border-border bg-card overflow-hidden">
+          {/* Desktop table */}
+          <div className="hidden md:block">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="bg-muted/50 p-3 text-left font-bold text-foreground/70 w-1/4"></th>
+                  <th className="p-3 text-left font-bold text-primary">
+                    <div className="flex items-center gap-1.5"><Dumbbell size={12} /> MARCOS</div>
+                  </th>
+                  <th className="p-3 text-left font-bold text-[hsl(145,54%,42%)]">
+                    <div className="flex items-center gap-1.5"><Mountain size={12} /> THIAGO</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {tableRows.map((row, i) => (
+                  <tr key={i} className={i < tableRows.length - 1 ? "border-b border-border" : ""}>
+                    <td className="bg-muted/50 p-3 font-bold text-foreground/70 align-top">{row.label}</td>
+                    <td className="p-3 text-foreground/90 align-top">{row.marcos}</td>
+                    <td className="p-3 text-foreground/90 align-top">{row.thiago}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile stacked */}
+          <div className="md:hidden divide-y divide-border">
+            {tableRows.map((row, i) => (
+              <div key={i} className="p-3 space-y-1.5">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-foreground/50">{row.label}</p>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="rounded-md bg-primary/10 p-2">
+                    <p className="text-[9px] font-bold text-primary mb-0.5">Marcos</p>
+                    <p className="text-[10px] text-foreground/90 leading-snug">{row.marcos}</p>
+                  </div>
+                  <div className="rounded-md bg-[hsl(145,54%,42%)]/10 p-2">
+                    <p className="text-[9px] font-bold text-[hsl(145,54%,42%)] mb-0.5">Thiago</p>
+                    <p className="text-[10px] text-foreground/90 leading-snug">{row.thiago}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </AnimateOnView>
     </div>
   );
 };
