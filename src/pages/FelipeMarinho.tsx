@@ -5,6 +5,8 @@ import NarrationText from "@/components/presentation/NarrationText";
 import ProgressDots from "@/components/presentation/ProgressDots";
 import Slide01Abertura from "@/components/presentation/Slide01Abertura";
 import Slide02Legendarios from "@/components/presentation/Slide02Legendarios";
+import Slide03DoisPublicos from "@/components/presentation/Slide03DoisPublicos";
+import Slide04Escadinha from "@/components/presentation/Slide04Escadinha";
 
 const TOTAL_SLIDES = 5;
 
@@ -64,21 +66,17 @@ const FelipeMarinho = () => {
         <Slide02Legendarios />
       </Slide>
 
-      {/* Placeholders */}
-      <Slide>
-        <SlideTitle>Título do Slide 3</SlideTitle>
-        <NarrationText>
-          Placeholder para a próxima tela da apresentação.
-        </NarrationText>
+      {/* TELA 03 — DOIS PÚBLICOS */}
+      <Slide fullWidth>
+        <Slide03DoisPublicos />
       </Slide>
 
-      <Slide>
-        <SlideTitle>Título do Slide 4</SlideTitle>
-        <NarrationText>
-          Placeholder para a próxima tela da apresentação.
-        </NarrationText>
+      {/* TELA 04 — ESCADINHA */}
+      <Slide fullWidth>
+        <Slide04Escadinha />
       </Slide>
 
+      {/* Placeholder */}
       <Slide>
         <SlideTitle>Título do Slide 5</SlideTitle>
         <NarrationText>
