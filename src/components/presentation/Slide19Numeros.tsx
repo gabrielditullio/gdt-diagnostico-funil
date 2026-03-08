@@ -4,12 +4,12 @@ import { useEffect, useRef, useState } from "react";
 const months = ["Mês 1", "Mês 2", "Mês 3", "Mês 4", "Mês 5", "Mês 6"];
 
 const data = [
-  { frontend: 1500, programa: 500, vip: 0, comunidade: 200, ads: 1500 },
-  { frontend: 2000, programa: 800, vip: 0, comunidade: 500, ads: 1500 },
-  { frontend: 3000, programa: 5000, vip: 3000, comunidade: 2000, ads: 1500 },
-  { frontend: 4000, programa: 7000, vip: 3000, comunidade: 4000, ads: 1500 },
-  { frontend: 5000, programa: 12000, vip: 6000, comunidade: 7000, ads: 1500 },
-  { frontend: 6000, programa: 15000, vip: 9000, comunidade: 10000, ads: 1500 },
+  { frontend: 1000, programa: 0, vip: 0, comunidade: 0, ads: 3000 },
+  { frontend: 3000, programa: 0, vip: 0, comunidade: 0, ads: 4000 },
+  { frontend: 4000, programa: 4000, vip: 0, comunidade: 2000, ads: 6000 },
+  { frontend: 5000, programa: 7000, vip: 4000, comunidade: 4000, ads: 8000 },
+  { frontend: 6000, programa: 12000, vip: 8000, comunidade: 9000, ads: 10000 },
+  { frontend: 10000, programa: 18000, vip: 15000, comunidade: 7000, ads: 12000 },
 ];
 
 const categories = [
@@ -131,7 +131,7 @@ const Slide19Numeros = () => {
 
       {/* Disclaimer */}
       <p className="text-[9px] text-muted-foreground/60 text-center max-w-lg mx-auto leading-relaxed">
-        Projeção conservadora baseada em benchmarks do mercado fitness brasileiro. Resultados dependem de execução.
+        Projeção conservadora baseada em benchmarks do mercado fitness brasileiro. Estes NÃO são resultados garantidos — são metas baseadas em dados de mercado. Resultados dependem de execução.
       </p>
     </div>
   );
