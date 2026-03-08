@@ -7,8 +7,10 @@ import Slide01Abertura from "@/components/presentation/Slide01Abertura";
 import Slide02Legendarios from "@/components/presentation/Slide02Legendarios";
 import Slide03DoisPublicos from "@/components/presentation/Slide03DoisPublicos";
 import Slide04Escadinha from "@/components/presentation/Slide04Escadinha";
+import Slide05PresenteGratis from "@/components/presentation/Slide05PresenteGratis";
+import Slide06EmailsAutomaticos from "@/components/presentation/Slide06EmailsAutomaticos";
 
-const TOTAL_SLIDES = 5;
+const TOTAL_SLIDES = 7;
 
 const FelipeMarinho = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -24,14 +26,12 @@ const FelipeMarinho = () => {
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-
     const handleScroll = () => {
       const scrollTop = container.scrollTop;
       const slideHeight = container.clientHeight;
       const index = Math.round(scrollTop / slideHeight);
       setCurrentSlide(Math.min(index, TOTAL_SLIDES - 1));
     };
-
     container.addEventListener("scroll", handleScroll, { passive: true });
     return () => container.removeEventListener("scroll", handleScroll);
   }, []);
@@ -40,12 +40,10 @@ const FelipeMarinho = () => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowDown" || e.key === " ") {
         e.preventDefault();
-        const next = Math.min(currentSlide + 1, TOTAL_SLIDES - 1);
-        scrollToSlide(next);
+        scrollToSlide(Math.min(currentSlide + 1, TOTAL_SLIDES - 1));
       } else if (e.key === "ArrowUp") {
         e.preventDefault();
-        const prev = Math.max(currentSlide - 1, 0);
-        scrollToSlide(prev);
+        scrollToSlide(Math.max(currentSlide - 1, 0));
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -56,32 +54,16 @@ const FelipeMarinho = () => {
     <div ref={containerRef} className="snap-container">
       <ProgressDots total={TOTAL_SLIDES} current={currentSlide} onNavigate={scrollToSlide} />
 
-      {/* TELA 01 — ABERTURA */}
-      <Slide fullWidth>
-        <Slide01Abertura />
-      </Slide>
+      <Slide fullWidth><Slide01Abertura /></Slide>
+      <Slide fullWidth><Slide02Legendarios /></Slide>
+      <Slide fullWidth><Slide03DoisPublicos /></Slide>
+      <Slide fullWidth><Slide04Escadinha /></Slide>
+      <Slide fullWidth><Slide05PresenteGratis /></Slide>
+      <Slide fullWidth><Slide06EmailsAutomaticos /></Slide>
 
-      {/* TELA 02 — LEGENDÁRIOS */}
-      <Slide fullWidth>
-        <Slide02Legendarios />
-      </Slide>
-
-      {/* TELA 03 — DOIS PÚBLICOS */}
-      <Slide fullWidth>
-        <Slide03DoisPublicos />
-      </Slide>
-
-      {/* TELA 04 — ESCADINHA */}
-      <Slide fullWidth>
-        <Slide04Escadinha />
-      </Slide>
-
-      {/* Placeholder */}
       <Slide>
-        <SlideTitle>Título do Slide 5</SlideTitle>
-        <NarrationText>
-          Placeholder para a próxima tela da apresentação.
-        </NarrationText>
+        <SlideTitle>Título do Slide 7</SlideTitle>
+        <NarrationText>Placeholder para a próxima tela da apresentação.</NarrationText>
       </Slide>
     </div>
   );
