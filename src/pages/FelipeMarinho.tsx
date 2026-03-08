@@ -99,7 +99,7 @@ const FelipeMarinho = () => {
           <Slide00Capa onStart={() => goTo(1)} />
         ) : (
           <Slide fullWidth>
-            <SlideContent! />
+            {SlideContent && <SlideContent />}
           </Slide>
         )}
       </div>
