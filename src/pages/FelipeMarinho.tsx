@@ -14,8 +14,11 @@ import Slide10ComunidadeGG from "@/components/presentation/Slide10ComunidadeGG";
 import Slide11FelipeCamila from "@/components/presentation/Slide11FelipeCamila";
 import Slide12Trafego from "@/components/presentation/Slide12Trafego";
 import Slide13Site from "@/components/presentation/Slide13Site";
+import Slide14MarcaPessoal from "@/components/presentation/Slide14MarcaPessoal";
+import Slide15TrekkingFit from "@/components/presentation/Slide15TrekkingFit";
+import Slide16Calendario from "@/components/presentation/Slide16Calendario";
 
-const TOTAL_SLIDES = 13;
+const TOTAL_SLIDES = 16;
 
 const FelipeMarinho = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -71,6 +74,9 @@ const FelipeMarinho = () => {
       <Slide fullWidth><Slide11FelipeCamila /></Slide>
       <Slide fullWidth><Slide12Trafego /></Slide>
       <Slide fullWidth><Slide13Site /></Slide>
+      <Slide fullWidth><Slide14MarcaPessoal /></Slide>
+      <Slide fullWidth><Slide15TrekkingFit /></Slide>
+      <Slide fullWidth><Slide16Calendario /></Slide>
     </div>
   );
 };
