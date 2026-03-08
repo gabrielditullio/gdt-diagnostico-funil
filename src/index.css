@@ -61,9 +61,25 @@
     scroll-snap-type: y mandatory;
     overflow-y: auto;
     height: 100vh;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
   }
   .snap-slide {
     scroll-snap-align: start;
     scroll-snap-stop: always;
+  }
+}
+
+@layer components {
+  /* Card hover micro-interactions */
+  .card-hover {
+    @apply transition-all duration-200;
+  }
+  .card-hover:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+  }
+  .card-hover:active {
+    @apply scale-[0.98];
   }
 }
