@@ -1,16 +1,15 @@
-import { ReactNode } from "react";
-
 interface FooterQuoteProps {
-  children: ReactNode;
+  text: string;
   className?: string;
 }
 
-const FooterQuote = ({ children, className = "" }: FooterQuoteProps) => {
-  return (
-    <blockquote className={`italic text-muted-foreground border-l-2 border-primary pl-4 text-sm ${className}`}>
-      {children}
-    </blockquote>
-  );
-};
+const FooterQuote = ({ text, className = "" }: FooterQuoteProps) => (
+  <p
+    className={`text-center text-sm italic mt-8 ${className}`}
+    style={{ color: "#666666" }}
+  >
+    "{text}"
+  </p>
+);
 
 export default FooterQuote;

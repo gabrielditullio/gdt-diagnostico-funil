@@ -1,21 +1,35 @@
-import { ReactNode } from "react";
+import { useEffect, useRef, useState, ReactNode } from "react";
 
 interface FadeInProps {
   delay?: number;
   children: ReactNode;
   className?: string;
-  isActive?: boolean;
 }
 
-const FadeIn = ({ delay = 0, children, className = "", isActive = true }: FadeInProps) => {
+const FadeIn = ({ delay = 0, children, className = "" }: FadeInProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.15 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <div
-      className={`${isActive ? "animate-slide-transition" : "opacity-0"} ${className}`}
-      style={
-        isActive
-          ? { animationDelay: `${delay}ms`, animationFillMode: "forwards" }
-          : undefined
-      }
+      ref={ref}
+      className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "none" : "translateY(24px)",
+        transition: `opacity 300ms ease-out ${delay}ms, transform 300ms ease-out ${delay}ms`,
+      }}
     >
       {children}
     </div>
