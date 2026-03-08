@@ -16,7 +16,9 @@ const Slide23CTA = () => {
 
       <AnimateOnView delay={400}>
         <a
-          href="#agendar"
+          href="mailto:gabriel@dtcoproducoes.com.br?subject=Diagnóstico Felipe Marinho — Agendar Conversa"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block rounded-xl bg-primary px-8 py-4 md:px-10 md:py-5 transition-transform duration-200 hover:scale-105 active:scale-95 shadow-lg shadow-primary/20"
         >
           <span className="text-base md:text-xl font-extrabold text-primary-foreground uppercase tracking-wider">
