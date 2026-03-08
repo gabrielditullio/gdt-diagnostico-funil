@@ -9,8 +9,10 @@ import Slide03DoisPublicos from "@/components/presentation/Slide03DoisPublicos";
 import Slide04Escadinha from "@/components/presentation/Slide04Escadinha";
 import Slide05PresenteGratis from "@/components/presentation/Slide05PresenteGratis";
 import Slide06EmailsAutomaticos from "@/components/presentation/Slide06EmailsAutomaticos";
+import Slide07ProdutoEntrada from "@/components/presentation/Slide07ProdutoEntrada";
+import Slide08ProgramaCompleto from "@/components/presentation/Slide08ProgramaCompleto";
 
-const TOTAL_SLIDES = 7;
+const TOTAL_SLIDES = 9;
 
 const FelipeMarinho = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -60,9 +62,11 @@ const FelipeMarinho = () => {
       <Slide fullWidth><Slide04Escadinha /></Slide>
       <Slide fullWidth><Slide05PresenteGratis /></Slide>
       <Slide fullWidth><Slide06EmailsAutomaticos /></Slide>
+      <Slide fullWidth><Slide07ProdutoEntrada /></Slide>
+      <Slide fullWidth><Slide08ProgramaCompleto /></Slide>
 
       <Slide>
-        <SlideTitle>Título do Slide 7</SlideTitle>
+        <SlideTitle>Título do Slide 9</SlideTitle>
         <NarrationText>Placeholder para a próxima tela da apresentação.</NarrationText>
       </Slide>
     </div>
