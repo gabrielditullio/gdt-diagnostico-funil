@@ -36,6 +36,15 @@ export default {
           DEFAULT: "hsl(var(--success))",
           foreground: "hsl(var(--success-foreground))",
         },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          foreground: "hsl(var(--gold-foreground))",
+          muted: "hsl(var(--gold-muted))",
+        },
+        danger: {
+          DEFAULT: "hsl(var(--danger))",
+          muted: "hsl(var(--danger-muted))",
+        },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",

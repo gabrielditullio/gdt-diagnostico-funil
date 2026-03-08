@@ -3,8 +3,10 @@ import Slide from "@/components/presentation/Slide";
 import SlideTitle from "@/components/presentation/SlideTitle";
 import NarrationText from "@/components/presentation/NarrationText";
 import ProgressDots from "@/components/presentation/ProgressDots";
+import Slide01Abertura from "@/components/presentation/Slide01Abertura";
+import Slide02Legendarios from "@/components/presentation/Slide02Legendarios";
 
-const TOTAL_SLIDES = 3;
+const TOTAL_SLIDES = 5;
 
 const FelipeMarinho = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -52,24 +54,35 @@ const FelipeMarinho = () => {
     <div ref={containerRef} className="snap-container">
       <ProgressDots total={TOTAL_SLIDES} current={currentSlide} onNavigate={scrollToSlide} />
 
-      <Slide>
-        <SlideTitle>Título do Slide 1</SlideTitle>
-        <NarrationText>
-          Este é um texto narrativo placeholder para testar a tipografia e o layout da apresentação.
-        </NarrationText>
+      {/* TELA 01 — ABERTURA */}
+      <Slide fullWidth>
+        <Slide01Abertura />
       </Slide>
 
-      <Slide>
-        <SlideTitle>Título do Slide 2</SlideTitle>
-        <NarrationText>
-          Segundo slide com conteúdo de exemplo. A navegação vertical com scroll-snap está funcionando.
-        </NarrationText>
+      {/* TELA 02 — LEGENDÁRIOS */}
+      <Slide fullWidth>
+        <Slide02Legendarios />
       </Slide>
 
+      {/* Placeholders */}
       <Slide>
         <SlideTitle>Título do Slide 3</SlideTitle>
         <NarrationText>
-          Terceiro e último slide placeholder. Use as setas do teclado ou os dots laterais para navegar.
+          Placeholder para a próxima tela da apresentação.
+        </NarrationText>
+      </Slide>
+
+      <Slide>
+        <SlideTitle>Título do Slide 4</SlideTitle>
+        <NarrationText>
+          Placeholder para a próxima tela da apresentação.
+        </NarrationText>
+      </Slide>
+
+      <Slide>
+        <SlideTitle>Título do Slide 5</SlideTitle>
+        <NarrationText>
+          Placeholder para a próxima tela da apresentação.
         </NarrationText>
       </Slide>
     </div>
