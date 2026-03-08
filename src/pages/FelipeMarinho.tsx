@@ -17,8 +17,11 @@ import Slide13Site from "@/components/presentation/Slide13Site";
 import Slide14MarcaPessoal from "@/components/presentation/Slide14MarcaPessoal";
 import Slide15TrekkingFit from "@/components/presentation/Slide15TrekkingFit";
 import Slide16Calendario from "@/components/presentation/Slide16Calendario";
+import Slide17Youtube from "@/components/presentation/Slide17Youtube";
+import Slide18Anuncios from "@/components/presentation/Slide18Anuncios";
+import Slide19Numeros from "@/components/presentation/Slide19Numeros";
 
-const TOTAL_SLIDES = 16;
+const TOTAL_SLIDES = 19;
 
 const FelipeMarinho = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -77,6 +80,9 @@ const FelipeMarinho = () => {
       <Slide fullWidth><Slide14MarcaPessoal /></Slide>
       <Slide fullWidth><Slide15TrekkingFit /></Slide>
       <Slide fullWidth><Slide16Calendario /></Slide>
+      <Slide fullWidth><Slide17Youtube /></Slide>
+      <Slide fullWidth><Slide18Anuncios /></Slide>
+      <Slide fullWidth><Slide19Numeros /></Slide>
     </div>
   );
 };
