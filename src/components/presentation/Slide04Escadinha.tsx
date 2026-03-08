@@ -81,7 +81,7 @@ const Slide04Escadinha = () => {
       {/* Title */}
       <div className="text-center space-y-2">
         <span className="text-xs font-bold uppercase tracking-widest text-primary">Coração da Estratégia</span>
-        <h2 className="text-display">A Escadinha</h2>
+        <h2 className="text-display font-display">A Escadinha</h2>
       </div>
 
       {/* Staircase */}
