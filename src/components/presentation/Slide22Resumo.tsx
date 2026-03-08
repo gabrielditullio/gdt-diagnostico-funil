@@ -65,7 +65,7 @@ const Slide22Resumo = () => {
                 <span className="text-[8px] font-bold text-primary">{step.label}</span>
                 <span className="text-[8px] font-medium text-foreground flex-1 truncate">{step.price}</span>
                 {i >= 1 && (
-                  <UtensilsCrossed size={8} className="text-success shrink-0" title="Camila" />
+                  <UtensilsCrossed size={8} className="text-success shrink-0" />
                 )}
               </div>
             ))}
