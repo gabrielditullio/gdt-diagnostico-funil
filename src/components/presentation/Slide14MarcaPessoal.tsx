@@ -65,6 +65,15 @@ const Slide14MarcaPessoal = () => {
         </div>
       </AnimateOnView>
 
+      <AnimateOnView delay={250}>
+        <div className="mx-auto max-w-sm md:max-w-lg rounded-xl border-l-4 border-primary bg-primary/5 p-4 md:p-6 relative card-hover">
+          <p className="text-[9px] font-bold uppercase tracking-widest text-primary mb-2">Manifesto GG</p>
+          <p className="text-xs md:text-sm text-foreground/90 italic leading-relaxed">
+            "Chega de treinar no escuro. Chega de planilha genérica. O método que mantém o Gigante no topo existe — e agora é seu. Bem-vindo ao Protocolo GG."
+          </p>
+        </div>
+      </AnimateOnView>
+
       <AnimateOnView delay={300}>
         <p className="text-body-lg text-muted-foreground text-center max-w-2xl mx-auto">
           As pessoas não compram de empresas. Compram de <span className="text-foreground font-semibold">PESSOAS</span>.
