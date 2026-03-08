@@ -1,4 +1,5 @@
 import { MessageCircle, Video, Trophy, Users, Calculator } from "lucide-react";
+import StairIndicator from "./StairIndicator";
 import { useEffect, useRef, useState } from "react";
 
 const communityPosts = [
@@ -30,7 +31,8 @@ const Slide10ComunidadeGG = () => {
   }, []);
 
   return (
-    <div ref={ref} className="w-full space-y-6 md:space-y-8">
+    <div ref={ref} className="w-full space-y-6 md:space-y-8 relative">
+      <StairIndicator activeStep={5} className="absolute top-0 right-0" />
       <div className="text-center space-y-2">
         <span className="text-xs font-bold uppercase tracking-widest text-primary">Dinheiro Todo Mês</span>
         <h2 className="text-display">Comunidade GG</h2>

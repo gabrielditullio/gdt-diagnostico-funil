@@ -1,5 +1,6 @@
 import { Gift, Zap, Lightbulb, Star, Tag, Mail } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import StairIndicator from "./StairIndicator";
 
 const days = [
   { day: 1, title: "Boas-vindas + PDF + Curiosidade", icon: Gift, emotion: 40 },
@@ -39,7 +40,8 @@ const Slide06EmailsAutomaticos = () => {
   }, "");
 
   return (
-    <div ref={ref} className="w-full space-y-6 md:space-y-8">
+    <div ref={ref} className="w-full space-y-6 md:space-y-8 relative">
+      <StairIndicator activeStep={1} className="absolute top-0 right-0" />
       {/* Title */}
       <div className="text-center space-y-2">
         <span className="text-xs font-bold uppercase tracking-widest text-primary">A Novela</span>
