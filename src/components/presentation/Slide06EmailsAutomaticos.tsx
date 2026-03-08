@@ -47,8 +47,8 @@ const Slide06EmailsAutomaticos = () => {
       </div>
 
       {/* Timeline */}
-      <div className="relative overflow-x-auto pb-2">
-        <div className="flex gap-3 md:gap-4 min-w-[600px] md:min-w-0 md:grid md:grid-cols-5 px-2">
+      <div className="relative">
+        <div className="grid grid-cols-3 gap-2 md:grid-cols-5 md:gap-4 px-2 justify-items-center">
           {days.map((day, i) => (
             <div
               key={i}
