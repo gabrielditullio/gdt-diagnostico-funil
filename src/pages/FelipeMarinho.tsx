@@ -1,7 +1,5 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import Slide from "@/components/presentation/Slide";
-import SlideTitle from "@/components/presentation/SlideTitle";
-import NarrationText from "@/components/presentation/NarrationText";
 import ProgressDots from "@/components/presentation/ProgressDots";
 import Slide01Abertura from "@/components/presentation/Slide01Abertura";
 import Slide02Legendarios from "@/components/presentation/Slide02Legendarios";
@@ -11,8 +9,11 @@ import Slide05PresenteGratis from "@/components/presentation/Slide05PresenteGrat
 import Slide06EmailsAutomaticos from "@/components/presentation/Slide06EmailsAutomaticos";
 import Slide07ProdutoEntrada from "@/components/presentation/Slide07ProdutoEntrada";
 import Slide08ProgramaCompleto from "@/components/presentation/Slide08ProgramaCompleto";
+import Slide09ConsultoriaVIP from "@/components/presentation/Slide09ConsultoriaVIP";
+import Slide10ComunidadeGG from "@/components/presentation/Slide10ComunidadeGG";
+import Slide11FelipeCamila from "@/components/presentation/Slide11FelipeCamila";
 
-const TOTAL_SLIDES = 9;
+const TOTAL_SLIDES = 11;
 
 const FelipeMarinho = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -55,7 +56,6 @@ const FelipeMarinho = () => {
   return (
     <div ref={containerRef} className="snap-container">
       <ProgressDots total={TOTAL_SLIDES} current={currentSlide} onNavigate={scrollToSlide} />
-
       <Slide fullWidth><Slide01Abertura /></Slide>
       <Slide fullWidth><Slide02Legendarios /></Slide>
       <Slide fullWidth><Slide03DoisPublicos /></Slide>
@@ -64,11 +64,9 @@ const FelipeMarinho = () => {
       <Slide fullWidth><Slide06EmailsAutomaticos /></Slide>
       <Slide fullWidth><Slide07ProdutoEntrada /></Slide>
       <Slide fullWidth><Slide08ProgramaCompleto /></Slide>
-
-      <Slide>
-        <SlideTitle>Título do Slide 9</SlideTitle>
-        <NarrationText>Placeholder para a próxima tela da apresentação.</NarrationText>
-      </Slide>
+      <Slide fullWidth><Slide09ConsultoriaVIP /></Slide>
+      <Slide fullWidth><Slide10ComunidadeGG /></Slide>
+      <Slide fullWidth><Slide11FelipeCamila /></Slide>
     </div>
   );
 };
