@@ -24,6 +24,11 @@
     --destructive-foreground: 0 0% 100%;
     --success: 145 54% 42%;
     --success-foreground: 0 0% 100%;
+    --gold: 43 74% 49%;
+    --gold-foreground: 0 0% 100%;
+    --gold-muted: 43 50% 30%;
+    --danger: 4 76% 46%;
+    --danger-muted: 4 40% 20%;
     --border: 0 0% 20%;
     --input: 0 0% 20%;
     --ring: 24 100% 42%;
