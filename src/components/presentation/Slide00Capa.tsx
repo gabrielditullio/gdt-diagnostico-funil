@@ -48,19 +48,16 @@ const Slide00Capa = ({ onStart }: Slide00CapaProps) => {
         <div className="hidden md:flex items-center justify-center flex-shrink-0 ml-12">
           <div className="relative w-64 h-64 lg:w-80 lg:h-80">
             {/* Outer ring */}
-            <div
-              className="absolute inset-0 rounded-full border border-primary/20"
-              style={{ animation: "spin 120s linear infinite" }}
-            />
+            <div className="absolute inset-0 rounded-full border border-primary/20 animate-spin-slow" />
             {/* Middle ring */}
             <div
-              className="absolute inset-8 rounded-full border border-primary/15"
-              style={{ animation: "spin 120s linear infinite reverse" }}
+              className="absolute inset-8 rounded-full border border-primary/15 animate-spin-slow"
+              style={{ animationDirection: "reverse" }}
             />
             {/* Inner ring */}
             <div
-              className="absolute inset-16 rounded-full border border-primary/10"
-              style={{ animation: "spin 80s linear infinite" }}
+              className="absolute inset-16 rounded-full border border-primary/10 animate-spin-slow"
+              style={{ animationDuration: "80s" }}
             />
             {/* Center icon */}
             <div className="absolute inset-0 flex items-center justify-center">
