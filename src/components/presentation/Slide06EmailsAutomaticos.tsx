@@ -91,11 +91,11 @@ const Slide06EmailsAutomaticos = () => {
         <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground text-center">
           Curva emocional do leitor
         </p>
-        <div className="relative h-24 md:h-32">
+        <div className="relative h-36 md:h-44 overflow-visible pl-4">
           <svg
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
-            className="w-full h-full"
+            className="w-full h-full overflow-visible"
           >
             {/* Grid lines */}
             <line x1="10" y1="90" x2="90" y2="90" stroke="hsl(var(--border))" strokeWidth="0.3" />
@@ -146,19 +146,64 @@ const Slide06EmailsAutomaticos = () => {
               />
             ))}
 
-            {/* Labels */}
-            <text x="5" y="93" fontSize="3.5" fill="hsl(var(--muted-foreground))" className="font-sans">neutro</text>
-            <text x="5" y="20" fontSize="3.5" fill="hsl(var(--muted-foreground))" className="font-sans">ação</text>
+            {/* Y-axis labels */}
+            <text x="2" y="93" fontSize="3.5" fill="#FFFFFF" className="font-sans">neutro</text>
+            <text x="2" y="20" fontSize="3.5" fill="#FFFFFF" className="font-sans">ação</text>
+
+            {/* Point labels */}
+            {curvePoints.map((p, i) => {
+              const labels = ["Curiosidade", "Drama", "Virada", "Conexão", "Ação"];
+              return (
+                <g key={`label-${i}`} className="transition-all duration-500" style={{ opacity: inView ? 1 : 0, transitionDelay: `${i * 200 + 700}ms` }}>
+                  <rect
+                    x={p.x - 8}
+                    y={p.y - 11}
+                    width="16"
+                    height="6"
+                    rx="1"
+                    fill="rgba(0,0,0,0.6)"
+                  />
+                  <text
+                    x={p.x}
+                    y={p.y - 6.5}
+                    fontSize="3"
+                    fill="#FFFFFF"
+                    textAnchor="middle"
+                    fontWeight="600"
+                    className="font-sans"
+                  >
+                    {labels[i]}
+                  </text>
+                </g>
+              );
+            })}
           </svg>
 
           {/* Day labels below curve */}
-          <div className="absolute bottom-0 left-[10%] right-[10%] flex justify-between">
+          <div className="absolute bottom-0 left-[10%] right-[10%] flex justify-between px-1">
             {days.map((d, i) => (
-              <span key={i} className="text-[8px] md:text-[10px] text-muted-foreground font-medium">
+              <span key={i} className="text-[9px] md:text-[11px] text-foreground font-medium text-center">
                 Dia {d.day}
               </span>
             ))}
           </div>
+        </div>
+
+        {/* Emotion legend */}
+        <div className="flex items-center justify-center gap-3 md:gap-5 pt-2 flex-wrap">
+          {[
+            { emoji: "🎁", label: "Curiosidade" },
+            { emoji: "⚡", label: "Drama" },
+            { emoji: "💡", label: "Virada" },
+            { emoji: "⭐", label: "Conexão" },
+            { emoji: "🏷️", label: "Ação" },
+          ].map((item, i) => (
+            <span key={i} className="flex items-center gap-1 text-[10px] md:text-xs text-primary/80 font-medium">
+              <span>{item.emoji}</span>
+              {item.label}
+              {i < 4 && <span className="ml-2 text-muted-foreground">→</span>}
+            </span>
+          ))}
         </div>
       </div>
 
