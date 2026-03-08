@@ -5,7 +5,7 @@ const Slide23CTA = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center text-center space-y-6 md:space-y-10 py-4">
       <AnimateOnView>
-        <h2 className="text-display max-w-lg">O mercado não espera.</h2>
+        <h2 className="text-display max-w-lg font-display">O mercado não espera.</h2>
       </AnimateOnView>
 
       <AnimateOnView delay={200}>

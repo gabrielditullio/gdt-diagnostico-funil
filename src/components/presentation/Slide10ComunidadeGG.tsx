@@ -94,7 +94,7 @@ const Slide10ComunidadeGG = () => {
       <div className="mx-auto max-w-md rounded-xl border-2 border-primary bg-primary/5 p-5 text-center">
         <Calculator className="mx-auto text-primary mb-2" size={24} />
         <p className="text-sm text-muted-foreground mb-1">300 membros × R$47/mês</p>
-        <p className="text-3xl md:text-4xl font-extrabold text-primary">R$14.100</p>
+        <p className="text-3xl md:text-4xl font-extrabold text-primary font-display">R$14.100</p>
         <p className="text-sm font-bold text-foreground mt-1">TODO MÊS</p>
       </div>
 

@@ -13,6 +13,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Montserrat", "system-ui", "sans-serif"],
+        display: ["'Bebas Neue'", "'Oswald'", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

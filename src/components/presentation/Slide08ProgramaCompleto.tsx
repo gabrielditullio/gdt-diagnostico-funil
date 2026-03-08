@@ -88,7 +88,7 @@ const Slide08ProgramaCompleto = () => {
           }}
         >
           <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">Preço real</p>
-          <p className="text-4xl md:text-5xl font-extrabold text-primary">R$297</p>
+          <p className="text-4xl md:text-5xl font-extrabold text-primary font-display">R$297</p>
 
           {/* Guarantee badge */}
           <div className="absolute top-2 right-2 flex items-center gap-1 bg-success/10 border border-success/30 rounded-full px-2 py-1">

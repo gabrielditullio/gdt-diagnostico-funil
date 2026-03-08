@@ -26,7 +26,7 @@ const Slide01Abertura = () => {
     <div className="w-full space-y-6 md:space-y-10">
       <AnimateOnView>
         <div className="text-center space-y-3">
-          <h2 className="text-display leading-tight">
+          <h2 className="text-display leading-tight font-display">
             Você tem um <span className="text-gold">Porsche</span> na garagem...
             <br />
             mas está andando de <span className="text-muted-foreground">bicicleta.</span>

@@ -47,7 +47,7 @@ const Slide09ConsultoriaVIP = () => {
               <div className="text-center text-[10px] font-bold text-muted-foreground">vs</div>
               <div className="rounded-lg bg-primary/10 border border-primary/20 p-2.5 text-center">
                 <p className="text-[9px] font-bold uppercase tracking-wider text-primary mb-0.5">Consultoria GG Online</p>
-                <p className="text-xl font-extrabold text-primary">R$2.997</p>
+                <p className="text-xl font-extrabold text-primary font-display">R$2.997</p>
                 <p className="text-[10px] text-muted-foreground">por <span className="font-bold text-foreground">3 MESES</span></p>
               </div>
             </div>
