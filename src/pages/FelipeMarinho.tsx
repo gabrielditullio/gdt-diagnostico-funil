@@ -1,7 +1,4 @@
-import { useRef, useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
-import { useSlideNavigation } from "@/hooks/useSlideNavigation";
-import Slide from "@/components/presentation/Slide";
+import { useEffect, useRef, useState } from "react";
 import Slide00Capa from "@/components/presentation/Slide00Capa";
 import Slide01Abertura from "@/components/presentation/Slide01Abertura";
 import Slide02Legendarios from "@/components/presentation/Slide02Legendarios";
@@ -27,138 +24,84 @@ import Slide21Risco from "@/components/presentation/Slide21Risco";
 import Slide22Resumo from "@/components/presentation/Slide22Resumo";
 import Slide23CTA from "@/components/presentation/Slide23CTA";
 
-const slideComponents = [
-  null, // Slide 0 = Capa (rendered separately)
-  Slide01Abertura, Slide02Legendarios, Slide03DoisPublicos, Slide04Escadinha,
-  Slide05PresenteGratis, Slide06EmailsAutomaticos, Slide07ProdutoEntrada,
-  Slide08ProgramaCompleto, Slide09ConsultoriaVIP, Slide10ComunidadeGG,
-  Slide11FelipeCamila, Slide12Trafego, Slide13Site, Slide14MarcaPessoal,
-  Slide15TrekkingFit, Slide16Calendario, Slide17Youtube, Slide18Anuncios,
-  Slide19Numeros, Slide20Roadmap, Slide21Risco, Slide22Resumo, Slide23CTA,
+const slides = [
+  Slide00Capa, Slide01Abertura, Slide02Legendarios, Slide03DoisPublicos,
+  Slide04Escadinha, Slide05PresenteGratis, Slide06EmailsAutomaticos,
+  Slide07ProdutoEntrada, Slide08ProgramaCompleto, Slide09ConsultoriaVIP,
+  Slide10ComunidadeGG, Slide11FelipeCamila, Slide12Trafego, Slide13Site,
+  Slide14MarcaPessoal, Slide15TrekkingFit, Slide16Calendario, Slide17Youtube,
+  Slide18Anuncios, Slide19Numeros, Slide20Roadmap, Slide21Risco,
+  Slide22Resumo, Slide23CTA,
 ];
 
-const TOTAL = slideComponents.length; // 24
+const TOTAL = slides.length;
 
 const FelipeMarinho = () => {
-  const { current, next, prev, goTo, onTouchStart, onTouchEnd } = useSlideNavigation({ totalSlides: TOTAL });
-  const slideRef = useRef<HTMLDivElement>(null);
-  const [hasOverflow, setHasOverflow] = useState(false);
-  const [scrolledDown, setScrolledDown] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [current, setCurrent] = useState(0);
 
-  const isCover = current === 0;
-  const progress = ((current + 1) / TOTAL) * 100;
-
-  // Check if slide content overflows
+  // Track current slide via scroll position
   useEffect(() => {
-    setScrolledDown(false);
-    const el = slideRef.current;
-    if (!el) return;
-    const check = () => setHasOverflow(el.scrollHeight > el.clientHeight + 20);
-    check();
-    const ro = new ResizeObserver(check);
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, [current]);
-
-  // Track scroll inside slide
-  useEffect(() => {
-    const el = slideRef.current;
+    const el = containerRef.current;
     if (!el) return;
     const onScroll = () => {
-      if (el.scrollTop > 10) setScrolledDown(true);
+      const index = Math.round(el.scrollTop / window.innerHeight);
+      setCurrent(Math.min(index, TOTAL - 1));
     };
     el.addEventListener("scroll", onScroll, { passive: true });
     return () => el.removeEventListener("scroll", onScroll);
-  }, [current]);
+  }, []);
 
-  const SlideContent = slideComponents[current];
+  // Keyboard navigation
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+        e.preventDefault();
+        el.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+      } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+        e.preventDefault();
+        el.scrollBy({ top: -window.innerHeight, behavior: "smooth" });
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
-    <div
-      className="w-screen h-screen overflow-hidden relative bg-background"
-      onTouchStart={onTouchStart}
-      onTouchEnd={onTouchEnd}
-    >
-      {/* Progress bar (hidden on cover) */}
-      {!isCover && (
-        <div className="fixed top-0 left-0 right-0 z-50 h-[3px] bg-primary/20">
-          <div
-            className="h-full bg-primary transition-all duration-500"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
-      )}
-
-      {/* Slide */}
+    <div className="relative w-screen h-screen overflow-hidden bg-black">
+      {/* Scrollable container with snap */}
       <div
-        key={current}
-        ref={slideRef}
-        className="w-full h-full overflow-y-auto animate-slide-transition"
+        ref={containerRef}
+        className="w-full h-full overflow-y-auto"
+        style={{ scrollSnapType: "y mandatory" }}
       >
-        {isCover ? (
-          <Slide00Capa onStart={() => goTo(1)} />
-        ) : (
-          <Slide fullWidth>
-            {SlideContent && <SlideContent />}
-          </Slide>
-        )}
+        {slides.map((SlideComponent, i) => (
+          <SlideComponent key={i} />
+        ))}
       </div>
 
-      {/* Desktop side arrows (hidden on cover) */}
-      {!isCover && (
-        <>
+      {/* Progress dots — right side */}
+      <div className="fixed right-3 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1.5">
+        {slides.map((_, i) => (
           <button
-            onClick={prev}
-            disabled={current <= 1}
-            className="hidden md:flex fixed left-4 top-1/2 -translate-y-1/2 z-50 w-10 h-10 items-center justify-center rounded-full bg-white/5 border border-primary/20 text-foreground transition-all hover:bg-primary/15 disabled:opacity-0 disabled:pointer-events-none"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <button
-            onClick={next}
-            disabled={current === TOTAL - 1}
-            className="hidden md:flex fixed right-4 top-1/2 -translate-y-1/2 z-50 w-10 h-10 items-center justify-center rounded-full bg-white/5 border border-primary/20 text-foreground transition-all hover:bg-primary/15 disabled:opacity-0 disabled:pointer-events-none"
-          >
-            <ChevronRight size={20} />
-          </button>
-        </>
-      )}
-
-      {/* Compact nav buttons (hidden on cover) */}
-      {!isCover && (
-        <div className="fixed bottom-6 right-6 z-50 flex gap-2">
-          <button
-            onClick={prev}
-            disabled={current <= 1}
-            className="w-9 h-9 flex items-center justify-center rounded-full border border-primary/25 bg-card/80 backdrop-blur-sm text-foreground transition-all disabled:opacity-30"
-          >
-            <ChevronLeft size={16} />
-          </button>
-          <button
-            onClick={next}
-            disabled={current === TOTAL - 1}
-            className="w-9 h-9 flex items-center justify-center rounded-full border border-primary/25 bg-card/80 backdrop-blur-sm text-foreground transition-all disabled:opacity-30"
-          >
-            <ChevronRight size={16} />
-          </button>
-        </div>
-      )}
-
-      {/* Slide counter (hidden on cover) */}
-      {!isCover && (
-        <div className="fixed bottom-6 left-6 z-50">
-          <span className="text-sm text-muted-foreground">
-            {String(current + 1).padStart(2, "0")} / {String(TOTAL).padStart(2, "0")}
-          </span>
-        </div>
-      )}
-
-      {/* Scroll indicator */}
-      {hasOverflow && !scrolledDown && !isCover && (
-        <div className="fixed bottom-16 left-1/2 -translate-x-1/2 z-50 text-muted-foreground animate-bounce">
-          <ChevronDown size={24} />
-        </div>
-      )}
+            key={i}
+            onClick={() => {
+              containerRef.current?.scrollTo({
+                top: i * window.innerHeight,
+                behavior: "smooth",
+              });
+            }}
+            className="w-2 h-2 rounded-full transition-all duration-300"
+            style={{
+              backgroundColor: i === current ? "#D35400" : "rgba(255,255,255,0.25)",
+              transform: i === current ? "scale(1.4)" : "scale(1)",
+            }}
+            aria-label={`Slide ${i + 1}`}
+          />
+        ))}
+      </div>
     </div>
   );
 };
