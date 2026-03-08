@@ -1,5 +1,6 @@
 import { Crown, Shield, Check } from "lucide-react";
 import AnimateOnView from "./AnimateOnView";
+import StairIndicator from "./StairIndicator";
 
 const includes = [
   "90 dias acompanhamento",
@@ -12,7 +13,8 @@ const includes = [
 
 const Slide09ConsultoriaVIP = () => {
   return (
-    <div className="w-full space-y-5 md:space-y-8">
+    <div className="w-full space-y-5 md:space-y-8 relative">
+      <StairIndicator activeStep={4} className="absolute top-0 right-0" />
       <AnimateOnView>
         <div className="text-center space-y-2">
           <Crown className="mx-auto text-gold" size={28} />

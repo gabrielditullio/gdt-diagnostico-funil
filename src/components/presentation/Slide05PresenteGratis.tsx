@@ -1,4 +1,5 @@
 import { Mail, FileText, ArrowRight, Clock, Download, Dumbbell, Mountain } from "lucide-react";
+import StairIndicator from "./StairIndicator";
 import { useEffect, useRef, useState } from "react";
 
 function useCountUp(target: number, duration = 2000, start = false) {
@@ -81,7 +82,8 @@ const Slide05PresenteGratis = () => {
   const tab = tabs[activeTab];
 
   return (
-    <div ref={ref} className="w-full space-y-5 md:space-y-7">
+    <div ref={ref} className="w-full space-y-5 md:space-y-7 relative">
+      <StairIndicator activeStep={1} className="absolute top-0 right-0" />
       {/* Title */}
       <div className="text-center space-y-2">
         <span className="text-xs font-bold uppercase tracking-widest text-primary">Primeiro Degrau</span>
