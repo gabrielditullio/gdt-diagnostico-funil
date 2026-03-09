@@ -28,7 +28,7 @@ const Slide23CTA = () => (
                 Continuar como está
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed text-center">
-                Depender do Instagram orgânico e de quem chega por conta própria. Funciona, mas o crescimento é lento e você perde oportunidade todo dia.
+                Continuar com o quiz do Trekking funcionando para ex-Legendários, e os outros 5 produtos sem caminho de venda. Funciona parcialmente, mas o crescimento é limitado e você perde a maioria do público que te descobre.
               </p>
             </CardContent>
           </Card>
