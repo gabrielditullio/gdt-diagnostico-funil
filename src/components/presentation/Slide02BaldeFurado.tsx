@@ -88,26 +88,7 @@ const LeakyBucket = () => {
       ctx.fillStyle = "#C0392B";
       ctx.fill();
 
-      // 3. Draw labels for holes
-      ctx.font = "8px Arial";
-      ctx.textAlign = "center";
-      
-      // Left hole label
-      ctx.fillStyle = "#27AE60";
-      ctx.fillText("Não-Legendários", leftHole, bucketY + bucketHeight + 20);
-      ctx.fillText("bloqueados", leftHole, bucketY + bucketHeight + 30);
-      
-      // Right hole label
-      ctx.fillStyle = "#D35400";
-      ctx.fillText("Público GG", rightHole, bucketY + bucketHeight + 20);
-      ctx.fillText("sem caminho", rightHole, bucketY + bucketHeight + 30);
-
-      // 4. Draw "captured" label inside bucket
-      ctx.fillStyle = "#27AE60";
-      ctx.font = "9px Arial";
-      ctx.textAlign = "center";
-      ctx.fillText("Ex-Legendários", canvas.width/2, bucketY + bucketHeight - 20);
-      ctx.fillText("capturados ✓", canvas.width/2, bucketY + bucketHeight - 10);
+      // 3. Manage particles
 
       // 5. Manage particles
       // Add new drops falling IN (mix of green and orange)
@@ -205,7 +186,29 @@ const LeakyBucket = () => {
     return () => cancelAnimationFrame(animationId);
   }, []);
 
-  return <canvas ref={canvasRef} width={300} height={320} className="mx-auto" />;
+  return (
+    <div className="relative mx-auto" style={{ width: 300, height: 320 }}>
+      <canvas ref={canvasRef} width={300} height={320} />
+      {/* Left hole label */}
+      <div className="absolute text-center" style={{ bottom: 0, left: "5%", width: "35%" }}>
+        <p className="text-[11px] md:text-xs font-semibold" style={{ color: "#C0392B" }}>
+          Não-Legendários<br/>bloqueados
+        </p>
+      </div>
+      {/* Right hole label */}
+      <div className="absolute text-center" style={{ bottom: 0, right: "5%", width: "35%" }}>
+        <p className="text-[11px] md:text-xs font-semibold" style={{ color: "#D35400" }}>
+          Público GG<br/>sem caminho
+        </p>
+      </div>
+      {/* Captured label */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 text-center pointer-events-none">
+        <p className="text-[10px] md:text-xs font-medium" style={{ color: "#27AE60" }}>
+          Ex-Legendários<br/>capturados ✓
+        </p>
+      </div>
+    </div>
+  );
 };
 
 const Slide02BaldeFurado = () => (
