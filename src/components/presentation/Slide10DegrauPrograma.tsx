@@ -4,14 +4,14 @@ import { Badge } from "@/components/ui/badge";
 import StairIndicator from "./StairIndicator";
 import TabsLinhas from "./TabsLinhas";
 import AccordionEntregaveis from "./AccordionEntregaveis";
-import { Shield, CheckCheck, Star } from "lucide-react";
+import { Shield, CheckCheck, Star, Info } from "lucide-react";
 
 const tabs = [
   {
     label: "Protocolo GG",
     color: "#D35400",
     content: (
-      <div className="flex flex-col items-center py-6 space-y-4 relative">
+      <div className="flex flex-col items-center py-6 space-y-4 relative rounded-xl" style={{ border: "2px dashed rgba(211, 84, 0, 0.5)" }}>
         {/* Badge "PRECISA DE FUNIL NOVO" */}
         <div className="absolute top-2 right-2">
           <span className="text-[10px] font-bold px-2 py-1 rounded border-2 border-dashed" style={{ borderColor: "#D35400", color: "#D35400" }}>
@@ -75,47 +75,50 @@ const tabs = [
     label: "Trekking Fit",
     color: "#27AE60",
     content: (
-      <div className="flex flex-col items-center py-6 space-y-5 relative" style={{ backgroundColor: "rgba(10, 26, 10, 0.3)" }}>
+      <div className="flex flex-col items-center py-6 space-y-5 relative rounded-xl" style={{ backgroundColor: "#0A1A0A", border: "3px solid #27AE60" }}>
         {/* Badge "JÁ EXISTE E FUNCIONA" */}
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-lg font-bold text-white">Trekking Fit — JÁ FUNCIONA</span>
-          <Badge className="border-2 px-3 py-1 font-bold text-sm flex items-center gap-1" style={{ borderColor: "#27AE60", backgroundColor: "rgba(39, 174, 96, 0.2)", color: "#27AE60" }}>
-            <CheckCheck size={14} />
-            JÁ EXISTE E FUNCIONA
-          </Badge>
-        </div>
+        <FadeIn>
+          <div className="flex items-center gap-2 px-5 py-3 rounded-lg" style={{ backgroundColor: "#27AE60" }}>
+            <CheckCheck size={20} color="white" />
+            <span className="text-white font-bold text-sm tracking-wide">JÁ EXISTE E FUNCIONA</span>
+          </div>
+        </FadeIn>
 
         {/* Cards dos 3 planos */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-lg">
-          <FadeIn delay={0}>
-            <div className="p-4 rounded-xl border-2 text-center" style={{ borderColor: "#27AE60", backgroundColor: "rgba(39, 174, 96, 0.1)" }}>
-              <p className="text-xs text-gray-400 mb-1">Mensal</p>
-              <p className="text-2xl font-bold text-white">R$297<span className="text-sm font-normal text-gray-400">/mês</span></p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-lg px-4">
+          <FadeIn delay={100}>
+            <div className="p-5 rounded-xl border text-center" style={{ borderColor: "#27AE60", backgroundColor: "#0A1A0A" }}>
+              <p className="text-sm font-bold text-white mb-2">Mensal</p>
+              <p className="text-2xl font-black" style={{ color: "#27AE60" }}>R$297<span className="text-sm font-normal text-gray-400">/mês</span></p>
             </div>
           </FadeIn>
 
-          <FadeIn delay={200}>
-            <div className="p-4 rounded-xl border-2 text-center relative" style={{ borderColor: "#27AE60", backgroundColor: "rgba(39, 174, 96, 0.15)" }}>
-              <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1" style={{ backgroundColor: "#27AE60", color: "white" }}>
+          <FadeIn delay={250}>
+            <div className="p-5 rounded-xl border-2 text-center relative" style={{ borderColor: "#27AE60", backgroundColor: "#0A1A0A" }}>
+              <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-[10px] font-bold px-3 py-0.5 rounded-full flex items-center gap-1 whitespace-nowrap" style={{ backgroundColor: "#27AE60", color: "white" }}>
                 <Star size={10} /> Mais escolhido
               </span>
-              <p className="text-xs text-gray-400 mb-1 mt-2">Trimestral</p>
-              <p className="text-2xl font-bold text-white">R$597</p>
+              <p className="text-sm font-bold text-white mb-2 mt-1">Trimestral</p>
+              <p className="text-2xl font-black" style={{ color: "#27AE60" }}>R$597</p>
             </div>
           </FadeIn>
 
           <FadeIn delay={400}>
-            <div className="p-4 rounded-xl border-2 text-center" style={{ borderColor: "#27AE60", backgroundColor: "rgba(39, 174, 96, 0.1)" }}>
-              <p className="text-xs text-gray-400 mb-1">Semestral</p>
-              <p className="text-2xl font-bold text-white">R$997</p>
+            <div className="p-5 rounded-xl border text-center" style={{ borderColor: "#27AE60", backgroundColor: "#0A1A0A" }}>
+              <p className="text-sm font-bold text-white mb-2">Semestral</p>
+              <p className="text-2xl font-black" style={{ color: "#27AE60" }}>R$997</p>
             </div>
           </FadeIn>
         </div>
 
+        {/* Callout narrativo */}
         <FadeIn delay={600}>
-          <p className="text-sm text-center text-gray-300 max-w-md leading-relaxed px-4 py-3 rounded-lg" style={{ backgroundColor: "rgba(39, 174, 96, 0.1)", border: "1px solid rgba(39, 174, 96, 0.3)" }}>
-            O quiz já vende esse produto. O que muda é que agora <strong className="text-white">qualquer homem pode acessar</strong> — não só ex-Legendários.
-          </p>
+          <div className="flex items-start gap-3 max-w-md px-4 py-4 rounded-lg mx-4" style={{ backgroundColor: "#1A1A1A", borderLeft: "3px solid #27AE60" }}>
+            <Info size={18} className="mt-0.5 flex-shrink-0" style={{ color: "#27AE60" }} />
+            <p className="text-sm text-gray-300 leading-relaxed">
+              O quiz já vende esse produto. O que muda é que agora <strong className="text-white">qualquer homem pode acessar</strong> — não só ex-Legendários.
+            </p>
+          </div>
         </FadeIn>
       </div>
     )
