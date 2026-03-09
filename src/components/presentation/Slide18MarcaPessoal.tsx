@@ -72,7 +72,29 @@ const Slide18MarcaPessoal = () => {
         </div>
       </FadeIn>
 
-      <FadeIn delay={1400} className="w-full max-w-2xl mx-auto">
+      {/* Manifesto GG */}
+      <FadeIn delay={1400} className="w-full max-w-3xl mx-auto mb-10">
+        <div
+          className="p-8 rounded-xl text-center"
+          style={{ 
+            backgroundColor: "#0A0A0A",
+            border: "2px solid transparent",
+            borderImage: "linear-gradient(135deg, #D35400, #D4A853) 1"
+          }}
+        >
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D4A853" }}>
+            MANIFESTO
+          </span>
+          <p className="text-lg md:text-xl italic text-white leading-relaxed mt-4 mb-4">
+            "Chega de treinar no escuro. O método que mantém o Gigante no topo agora é seu."
+          </p>
+          <p className="text-sm text-right" style={{ color: "#D4A853" }}>
+            — Felipe Marinho
+          </p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={1600} className="w-full max-w-2xl mx-auto">
         <AccordionEntregaveis
           title="O que será construído neste degrau"
           items={[
