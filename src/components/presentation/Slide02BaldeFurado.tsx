@@ -292,4 +292,4 @@ const Slide02Legendarios = () => (
   </SlideWrapper>
 );
 
-export default Slide02Legendarios;
+export default Slide02BaldeFurado;

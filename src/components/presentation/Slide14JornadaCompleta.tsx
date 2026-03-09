@@ -221,4 +221,4 @@ const Slide14MarcaPessoal = () => (
   </SlideWrapper>
 );
 
-export default Slide14MarcaPessoal;
+export default Slide14JornadaCompleta;

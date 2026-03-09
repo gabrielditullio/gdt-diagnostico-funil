@@ -1,37 +1,37 @@
 import { useEffect, useRef, useState } from "react";
 import Slide00Capa from "@/components/presentation/Slide00Capa";
 import Slide01Abertura from "@/components/presentation/Slide01Abertura";
-import Slide02Legendarios from "@/components/presentation/Slide02Legendarios";
-import Slide03DoisPublicos from "@/components/presentation/Slide03DoisPublicos";
-import Slide04Escadinha from "@/components/presentation/Slide04Escadinha";
-import Slide05PresenteGratis from "@/components/presentation/Slide05PresenteGratis";
-import Slide06EmailsAutomaticos from "@/components/presentation/Slide06EmailsAutomaticos";
-import Slide07ProdutoEntrada from "@/components/presentation/Slide07ProdutoEntrada";
-import Slide08ProgramaCompleto from "@/components/presentation/Slide08ProgramaCompleto";
-import Slide09ConsultoriaVIP from "@/components/presentation/Slide09ConsultoriaVIP";
-import Slide10ComunidadeGG from "@/components/presentation/Slide10ComunidadeGG";
-import Slide11FelipeCamila from "@/components/presentation/Slide11FelipeCamila";
-import Slide12Trafego from "@/components/presentation/Slide12Trafego";
-import Slide13Site from "@/components/presentation/Slide13Site";
-import Slide14MarcaPessoal from "@/components/presentation/Slide14MarcaPessoal";
+import Slide02BaldeFurado from "@/components/presentation/Slide02BaldeFurado";
+import Slide03ComoDeveriaSer from "@/components/presentation/Slide03ComoDeveriaSer";
+import Slide04DoisPublicos from "@/components/presentation/Slide04DoisPublicos";
+import Slide05Marcos from "@/components/presentation/Slide05Marcos";
+import Slide06ThiagoLegendarios from "@/components/presentation/Slide06ThiagoLegendarios";
+import Slide07EscadaCompleta from "@/components/presentation/Slide07EscadaCompleta";
+import Slide08DegrauIsca from "@/components/presentation/Slide08DegrauIsca";
+import Slide09DegrauEntrada from "@/components/presentation/Slide09DegrauEntrada";
+import Slide10DegrauPrograma from "@/components/presentation/Slide10DegrauPrograma";
+import Slide11DegrauVIP from "@/components/presentation/Slide11DegrauVIP";
+import Slide12DegrauComunidade from "@/components/presentation/Slide12DegrauComunidade";
+import Slide13FelipeCamila from "@/components/presentation/Slide13FelipeCamila";
+import Slide14JornadaCompleta from "@/components/presentation/Slide14JornadaCompleta";
 import Slide15TrekkingFit from "@/components/presentation/Slide15TrekkingFit";
 import Slide16Calendario from "@/components/presentation/Slide16Calendario";
-import Slide17Youtube from "@/components/presentation/Slide17Youtube";
-import Slide18Anuncios from "@/components/presentation/Slide18Anuncios";
-import Slide19Numeros from "@/components/presentation/Slide19Numeros";
+import Slide17Trafego from "@/components/presentation/Slide17Trafego";
+import Slide18MarcaPessoal from "@/components/presentation/Slide18MarcaPessoal";
+import Slide19Site from "@/components/presentation/Slide19Site";
 import Slide20Roadmap from "@/components/presentation/Slide20Roadmap";
-import Slide21Risco from "@/components/presentation/Slide21Risco";
-import Slide22Resumo from "@/components/presentation/Slide22Resumo";
+import Slide21Numeros from "@/components/presentation/Slide21Numeros";
+import Slide22Urgencia from "@/components/presentation/Slide22Urgencia";
 import Slide23CTA from "@/components/presentation/Slide23CTA";
 
 const slides = [
-  Slide00Capa, Slide01Abertura, Slide02Legendarios, Slide03DoisPublicos,
-  Slide04Escadinha, Slide05PresenteGratis, Slide06EmailsAutomaticos,
-  Slide07ProdutoEntrada, Slide08ProgramaCompleto, Slide09ConsultoriaVIP,
-  Slide10ComunidadeGG, Slide11FelipeCamila, Slide12Trafego, Slide13Site,
-  Slide14MarcaPessoal, Slide15TrekkingFit, Slide16Calendario, Slide17Youtube,
-  Slide18Anuncios, Slide19Numeros, Slide20Roadmap, Slide21Risco,
-  Slide22Resumo, Slide23CTA,
+  Slide00Capa, Slide01Abertura, Slide02BaldeFurado, Slide03ComoDeveriaSer,
+  Slide04DoisPublicos, Slide05Marcos, Slide06ThiagoLegendarios,
+  Slide07EscadaCompleta, Slide08DegrauIsca, Slide09DegrauEntrada,
+  Slide10DegrauPrograma, Slide11DegrauVIP, Slide12DegrauComunidade, Slide13FelipeCamila,
+  Slide14JornadaCompleta, Slide15TrekkingFit, Slide16Calendario, Slide17Trafego,
+  Slide18MarcaPessoal, Slide19Site, Slide20Roadmap, Slide21Numeros,
+  Slide22Urgencia, Slide23CTA,
 ];
 
 const TOTAL = slides.length;

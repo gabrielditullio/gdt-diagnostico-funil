@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import AccordionEntregaveis from "./AccordionEntregaveis";
 import { DollarSign, Youtube, Mountain, ArrowDown, Mail, TrendingUp } from "lucide-react";
 
-const Slide17Youtube = () => (
+const Slide17Trafego = () => (
   <SlideWrapper theme="light">
     <FadeIn>
       <h2 className="text-center mb-4 text-gray-900 font-bold" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
@@ -160,4 +160,4 @@ const Slide17Youtube = () => (
   </SlideWrapper>
 );
 
-export default Slide17Youtube;
+export default Slide17Trafego;

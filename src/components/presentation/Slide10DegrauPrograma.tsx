@@ -169,4 +169,4 @@ const Slide10ComunidadeGG = () => (
   </SlideWrapper>
 );
 
-export default Slide10ComunidadeGG;
+export default Slide10DegrauPrograma;

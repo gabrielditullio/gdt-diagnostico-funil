@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dumbbell, Apple, Crown } from "lucide-react";
 
-const Slide13Site = () => (
+const Slide13FelipeCamila = () => (
   <SlideWrapper theme="light">
     <FadeIn>
       <h2 className="text-center mb-12 text-gray-900 font-bold" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
@@ -114,4 +114,4 @@ const Slide13Site = () => (
   </SlideWrapper>
 );
 
-export default Slide13Site;
+export default Slide13FelipeCamila;

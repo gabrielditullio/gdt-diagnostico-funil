@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import AccordionEntregaveis from "./AccordionEntregaveis";
 import { AlertTriangle, Smartphone, Monitor, Instagram, Youtube } from "lucide-react";
 
-const Slide19Numeros = () => (
+const Slide19Site = () => (
   <SlideWrapper theme="light">
     {/* Alerta Site Fora do Ar */}
     <FadeIn>
@@ -162,4 +162,4 @@ const Slide19Numeros = () => (
   </SlideWrapper>
 );
 
-export default Slide19Numeros;
+export default Slide19Site;

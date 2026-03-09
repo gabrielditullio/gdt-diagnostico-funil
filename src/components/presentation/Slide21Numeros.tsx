@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import AccordionEntregaveis from "./AccordionEntregaveis";
 import { DollarSign, Users, TrendingUp, Target } from "lucide-react";
 
-const Slide21Risco = () => (
+const Slide21Numeros = () => (
   <SlideWrapper theme="light">
     <FadeIn>
       <h2 className="text-center mb-4 text-gray-900 font-bold" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
@@ -177,4 +177,4 @@ const Slide21Risco = () => (
   </SlideWrapper>
 );
 
-export default Slide21Risco;
+export default Slide21Numeros;

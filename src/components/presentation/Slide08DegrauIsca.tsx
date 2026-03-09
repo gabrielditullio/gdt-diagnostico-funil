@@ -221,4 +221,4 @@ const Slide08ProgramaCompleto = () => (
   </SlideWrapper>
 );
 
-export default Slide08ProgramaCompleto;
+export default Slide08DegrauIsca;

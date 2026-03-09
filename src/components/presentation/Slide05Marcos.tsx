@@ -2,7 +2,7 @@ import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
 import { Dumbbell, Calendar, Smartphone, HeartCrack, Check, Clock, Glasses, Scale } from "lucide-react";
 
-const Slide05PresenteGratis = () => (
+const Slide05Marcos = () => (
   <SlideWrapper theme="light">
     <div className="w-full max-w-4xl mx-auto flex flex-col items-center gap-8 relative">
       
@@ -109,4 +109,4 @@ const Slide05PresenteGratis = () => (
   </SlideWrapper>
 );
 
-export default Slide05PresenteGratis;
+export default Slide05Marcos;

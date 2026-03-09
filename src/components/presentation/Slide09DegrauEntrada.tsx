@@ -167,4 +167,4 @@ const Slide09ConsultoriaVIP = () => (
   </SlideWrapper>
 );
 
-export default Slide09ConsultoriaVIP;
+export default Slide09DegrauEntrada;
