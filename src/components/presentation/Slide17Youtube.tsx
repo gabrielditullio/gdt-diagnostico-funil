@@ -84,8 +84,8 @@ const Slide17Youtube = () => (
       <div className="flex justify-center mb-6">
         <div className="flex gap-4">
           <ArrowDown size={32} style={{ color: "#3498DB" }} className="animate-bounce" />
-          <ArrowDown size={32} style={{ color: "#E74C3C" }} className="animate-bounce" style={{ animationDelay: "0.1s" }} />
-          <ArrowDown size={32} style={{ color: "#27AE60" }} className="animate-bounce" style={{ animationDelay: "0.2s" }} />
+          <ArrowDown size={32} style={{ color: "#E74C3C", animationDelay: "0.1s" }} className="animate-bounce" />
+          <ArrowDown size={32} style={{ color: "#27AE60", animationDelay: "0.2s" }} className="animate-bounce" />
         </div>
       </div>
 
