@@ -5,7 +5,7 @@ import StairIndicator from "./StairIndicator";
 import TabsLinhas from "./TabsLinhas";
 import AccordionEntregaveis from "./AccordionEntregaveis";
 import FooterQuote from "./FooterQuote";
-import { ArrowRight, Smartphone, Mail, FileText, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Smartphone, Mail, FileText, CheckCircle2, Check } from "lucide-react";
 
 const tabs = [
   {
@@ -124,7 +124,7 @@ const tabs = [
 
 const Slide08ProgramaCompleto = () => (
   <SlideWrapper theme="light">
-    <div className="flex justify-between items-start mb-6">
+    <div className="flex justify-between items-start mb-4">
       <FadeIn>
         <span className="text-xs font-bold uppercase tracking-widest text-gray-400 block mb-2">Degrau 1</span>
         <div className="flex items-center gap-4">
@@ -139,25 +139,84 @@ const Slide08ProgramaCompleto = () => (
       </FadeIn>
     </div>
 
-    <FadeIn delay={300} className="w-full max-w-4xl mx-auto flex-1 flex flex-col justify-center mb-6">
+    {/* Narrativa */}
+    <FadeIn delay={200} className="max-w-3xl mx-auto mb-4">
+      <div className="space-y-3 text-sm md:text-base text-gray-700 leading-relaxed">
+        <p>
+          O teu quiz do Trekking Fit já faz algo muito importante: <strong className="text-gray-900">captura o email e o WhatsApp</strong> de quem passa por ele. Isso é ótimo. Mas ele só captura <strong className="text-gray-900">UMA fatia</strong>.
+        </p>
+        <p className="font-semibold text-gray-800">A isca gratuita resolve as duas fatias que estão escapando:</p>
+        <p>
+          <span className="inline-block w-3 h-3 rounded-full mr-2" style={{ backgroundColor: "#D35400" }}></span>
+          <strong>Pra linha do Shape:</strong> "Os 3 Exercícios Secretos do Shape do Gigante" — PDF grátis em troca do email. Qualquer pessoa que segue teu Instagram por causa do Léo Santana pode baixar. <em>Sem quiz, sem barreira.</em>
+        </p>
+        <p>
+          <span className="inline-block w-3 h-3 rounded-full mr-2" style={{ backgroundColor: "#27AE60" }}></span>
+          <strong>Pra linha do Trekking aberto:</strong> "Checklist: Você Está Pronto pra Montanha? 7 testes de prontidão" — PDF grátis. Pra <strong>QUALQUER</strong> homem que quer se preparar, não só quem já foi ao Legendários.
+        </p>
+      </div>
+    </FadeIn>
+
+    <FadeIn delay={300} className="w-full max-w-4xl mx-auto flex-1 flex flex-col justify-center mb-4">
       <TabsLinhas tabs={tabs} />
-      
-      <p className="text-center text-gray-600 text-sm md:text-base mt-8 max-w-2xl mx-auto font-medium leading-relaxed">
-        As duas iscas fazem a mesma coisa: transformam um desconhecido em contato. A partir daí, você pode falar com ele todo dia, toda semana, pelo tempo que quiser.
-      </p>
+    </FadeIn>
+
+    {/* Diagrama de cobertura */}
+    <FadeIn delay={400} className="w-full max-w-3xl mx-auto mb-4">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4">
+        {/* Bloco 1 - Quiz existente */}
+        <div className="flex-1 max-w-[200px] p-3 rounded-lg border-2 border-solid" style={{ borderColor: "#27AE60", backgroundColor: "rgba(39, 174, 96, 0.05)" }}>
+          <div className="flex items-center gap-2 mb-2">
+            <Check size={16} style={{ color: "#27AE60" }} />
+            <span className="text-xs font-bold text-gray-800">Quiz Trekking Fit</span>
+          </div>
+          <span className="text-[10px] text-gray-500 block">Já captura ex-Legendários</span>
+        </div>
+
+        <ArrowRight size={20} className="text-gray-400 rotate-90 md:rotate-0 shrink-0" />
+
+        {/* Bloco 2 - Isca GG */}
+        <div className="flex-1 max-w-[200px] p-3 rounded-lg border-2 border-dashed" style={{ borderColor: "#D35400", backgroundColor: "rgba(211, 84, 0, 0.05)" }}>
+          <div className="flex items-center gap-2 mb-2">
+            <FileText size={16} style={{ color: "#D35400" }} />
+            <span className="text-xs font-bold text-gray-800">Isca GG</span>
+            <span className="text-[8px] px-1 py-0.5 rounded font-bold" style={{ backgroundColor: "#D35400", color: "white" }}>NOVA</span>
+          </div>
+          <span className="text-[10px] text-gray-500 block">Captura público do shape</span>
+        </div>
+
+        <ArrowRight size={20} className="text-gray-400 rotate-90 md:rotate-0 shrink-0" />
+
+        {/* Bloco 3 - Isca Trekking aberta */}
+        <div className="flex-1 max-w-[200px] p-3 rounded-lg border-2 border-dashed" style={{ borderColor: "#27AE60", backgroundColor: "rgba(39, 174, 96, 0.05)" }}>
+          <div className="flex items-center gap-2 mb-2">
+            <FileText size={16} style={{ color: "#27AE60" }} />
+            <span className="text-xs font-bold text-gray-800">Isca Trekking</span>
+            <span className="text-[8px] px-1 py-0.5 rounded font-bold" style={{ backgroundColor: "#27AE60", color: "white" }}>NOVA</span>
+          </div>
+          <span className="text-[10px] text-gray-500 block">Captura não-Legendários</span>
+        </div>
+      </div>
+
+      {/* Barra de cobertura total */}
+      <div className="mt-4 flex items-center justify-center gap-2 px-4 py-2 rounded-lg" style={{ backgroundColor: "rgba(39, 174, 96, 0.1)", border: "1px solid #27AE60" }}>
+        <Check size={18} style={{ color: "#27AE60" }} />
+        <span className="text-sm font-bold" style={{ color: "#27AE60" }}>= COBERTURA TOTAL</span>
+      </div>
     </FadeIn>
 
     <FadeIn delay={500} className="w-full max-w-2xl mx-auto mt-auto">
       <AccordionEntregaveis 
         title="O que será construído neste degrau"
         items={[
-          "2 PDFs com design profissional e conteúdo real (GG + Trekking)",
+          "2 PDFs com design profissional e conteúdo real (GG + Trekking aberto)",
           "2 landing pages prontas e publicadas",
           "Sistema de email configurado para armazenar contatos",
-          "10 emails automáticos escritos (5 por linha) — a novela que vende sozinha"
+          "10 emails automáticos escritos (5 por linha) — a novela que vende sozinha",
+          "Integração: quem baixa a isca do Trekking e demonstra interesse no Legendários é direcionado pro quiz existente"
         ]}
       />
-      <FooterQuote text="Se o Instagram acabar amanhã, você ainda tem o contato dele." className="mt-6" />
+      <FooterQuote text="Se o Instagram acabar amanhã, você ainda tem o contato dele." className="mt-4" />
     </FadeIn>
   </SlideWrapper>
 );

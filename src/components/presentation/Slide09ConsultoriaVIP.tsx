@@ -5,7 +5,7 @@ import StairIndicator from "./StairIndicator";
 import TabsLinhas from "./TabsLinhas";
 import AccordionEntregaveis from "./AccordionEntregaveis";
 import FooterQuote from "./FooterQuote";
-import { PlayCircle, CreditCard } from "lucide-react";
+import { PlayCircle, CreditCard, RefreshCw } from "lucide-react";
 
 const tabs = [
   {
@@ -58,7 +58,7 @@ const tabs = [
 
 const Slide09ConsultoriaVIP = () => (
   <SlideWrapper theme="light">
-    <div className="flex justify-between items-start mb-6">
+    <div className="flex justify-between items-start mb-4">
       <FadeIn>
         <span className="text-xs font-bold uppercase tracking-widest text-gray-400 block mb-2">Degrau 2</span>
         <div className="flex items-center gap-4">
@@ -73,12 +73,41 @@ const Slide09ConsultoriaVIP = () => (
       </FadeIn>
     </div>
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-8 flex-1 items-center">
-      <FadeIn delay={300} className="flex flex-col w-full">
+    {/* Narrativa */}
+    <FadeIn delay={200} className="max-w-3xl mx-auto mb-4">
+      <div className="space-y-3 text-sm md:text-base text-gray-700 leading-relaxed">
+        <p>
+          Você já tem os produtos perfeitos pra esse degrau. A <strong className="text-gray-900">Dieta do GG por R$47</strong> e o <strong className="text-gray-900">eBook Trekking Fit</strong> — eles já estão na Hotmart. O problema é que <strong className="text-red-600">ninguém sabe que eles existem</strong>. Não tem nenhum caminho levando gente até lá.
+        </p>
+        <p>
+          O que a gente faz é simples: cria uma <strong>página de vendas pra cada um</strong>, conecta com os emails automáticos, e a pessoa que baixou o PDF grátis recebe no quinto dia a oferta.
+        </p>
+        <p>
+          E aqui tem um truque que você <strong className="text-gray-900">JÁ USA</strong>: no checkout do Trekking Fit, já aparece o eBook da Camila por R$29,90 como oferta extra. <span className="text-green-600 font-semibold">Funciona.</span> A gente replica essa mesma lógica nos outros produtos — cross-sell automático.
+        </p>
+      </div>
+    </FadeIn>
+
+    {/* Caixa de destaque - Order Bump */}
+    <FadeIn delay={300} className="max-w-2xl mx-auto mb-6">
+      <div className="p-4 rounded-xl border-2" style={{ borderColor: "#D4A853", backgroundColor: "#1A1A0F" }}>
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: "rgba(212, 168, 83, 0.2)" }}>
+            <RefreshCw size={20} style={{ color: "#D4A853" }} />
+          </div>
+          <p className="text-sm md:text-base text-white font-medium">
+            O order bump da Camila <span style={{ color: "#D4A853" }}>(R$29,90)</span> já funciona no Trekking Fit → <strong className="text-white">replicar em todos os produtos</strong>
+          </p>
+        </div>
+      </div>
+    </FadeIn>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6 flex-1 items-center">
+      <FadeIn delay={400} className="flex flex-col w-full">
         <TabsLinhas tabs={tabs} />
       </FadeIn>
 
-      <FadeIn delay={400} className="flex flex-col gap-5 justify-center">
+      <FadeIn delay={500} className="flex flex-col gap-5 justify-center">
         {/* Função Secreta Box */}
         <div className="bg-[#1A1A1A] border-l-[6px] border-[#D35400] rounded-r-xl p-6 shadow-2xl text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-24 h-24 bg-[#D35400] opacity-10 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none"></div>
@@ -123,17 +152,17 @@ const Slide09ConsultoriaVIP = () => (
       </FadeIn>
     </div>
 
-    <FadeIn delay={500} className="w-full max-w-2xl mx-auto mt-auto">
+    <FadeIn delay={600} className="w-full max-w-2xl mx-auto mt-auto">
       <AccordionEntregaveis 
         title="O que será construído neste degrau"
         items={[
           "2 páginas de venda com vídeo curto (3-5 min)",
-          "Configuração de order bumps no checkout",
+          "Configuração de order bumps cruzados (GG ↔ Trekking) + replicação do bump da Camila (R$29,90) que já funciona",
           "Configuração de upsell pós-compra",
-          "Integração de pagamento Hotmart"
+          "NOTA: Os produtos JÁ existem na Hotmart — o trabalho é criar a estrada até eles"
         ]}
       />
-      <FooterQuote text="Quem pagou uma vez, paga de novo." className="mt-6" />
+      <FooterQuote text="Quem pagou uma vez, paga de novo." className="mt-4" />
     </FadeIn>
   </SlideWrapper>
 );
