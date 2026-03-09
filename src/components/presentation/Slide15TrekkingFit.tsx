@@ -158,11 +158,11 @@ const Slide15TrekkingFit = () => (
 
     <FadeIn delay={1300} className="w-full max-w-2xl mx-auto mt-auto">
       <AccordionEntregaveis 
-        title="O que será construído"
+        title="O que muda na prática"
         items={[
-          "Novo fluxo do quiz (quem responde 'Não' é redirecionado para oferta de preparação)",
-          "Novo texto de abertura: aberto para qualquer homem",
-          "Textos por perfil: quem já fez, quem vai fazer, quem está pensando"
+          "Quem responde 'Não' é redirecionado para oferta de preparação em vez de ser bloqueado",
+          "Texto de abertura do quiz reescrito: aberto para qualquer homem",
+          "Mesma pergunta, resposta diferente — custo zero"
         ]}
       />
     </FadeIn>

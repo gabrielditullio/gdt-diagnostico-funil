@@ -156,11 +156,13 @@ const Slide20Roadmap = () => (
 
     <FadeIn delay={1600} className="w-full max-w-2xl mx-auto mt-8">
       <AccordionEntregaveis
-        title="O que será entregue"
+        title="O que cada fase resolve"
         items={[
-          "Cronograma de 6 meses semana a semana",
-          "Checklist de execução",
-          "Divisão de responsabilidades"
+          "Semana 1: vendas do Trekking começam a crescer sem gastar nada",
+          "Fase 1: infraestrutura de captura funcionando, site no ar",
+          "Fase 2: primeiros compradores de frontend, tráfego pago rodando",
+          "Fase 3: programa completo vendendo via webinar, consultoria VIP aberta",
+          "Fase 4: comunidade gerando receita recorrente, ecossistema completo"
         ]}
       />
     </FadeIn>
