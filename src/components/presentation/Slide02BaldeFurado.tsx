@@ -222,10 +222,12 @@ const Slide02BaldeFurado = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
         {/* Visual: Bucket + Indicators */}
-        <FadeIn delay={150} className="flex items-center justify-center gap-8 bg-[#141414] rounded-2xl p-10 border border-[#222]">
-          <LeakyBucket />
+        <FadeIn delay={150} className="flex flex-col sm:flex-row items-center justify-center gap-8 bg-[#141414] rounded-2xl p-10 border border-[#222] overflow-hidden">
+          <div className="shrink-0">
+            <LeakyBucket />
+          </div>
           
-          <div className="flex flex-col gap-8 min-w-[140px]">
+          <div className="flex flex-col gap-8 shrink-0">
             {/* Indicator 1 - Captured (Green) */}
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: "#27AE60" }}>
