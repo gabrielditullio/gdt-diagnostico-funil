@@ -1,7 +1,7 @@
 import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
 import { Badge } from "@/components/ui/badge";
-import AccordionEntregaveis from "./AccordionEntregaveis";
+
 import { Zap, Clock, TrendingUp, AlertTriangle, Check, CheckCircle2, ArrowRight, ArrowDown, User } from "lucide-react";
 
 const Slide15TrekkingFit = () => (
@@ -157,14 +157,23 @@ const Slide15TrekkingFit = () => (
     </FadeIn>
 
     <FadeIn delay={1300} className="w-full max-w-2xl mx-auto mt-auto">
-      <AccordionEntregaveis 
-        title="O que muda na prática"
-        items={[
-          "Quem responde 'Não' é redirecionado para oferta de preparação em vez de ser bloqueado",
-          "Texto de abertura do quiz reescrito: aberto para qualquer homem",
-          "Mesma pergunta, resposta diferente — custo zero"
-        ]}
-      />
+      <div className="border border-white/10 rounded-xl p-5 space-y-3" style={{ backgroundColor: "rgba(39, 174, 96, 0.08)" }}>
+        <p className="text-sm font-bold uppercase tracking-wider mb-3" style={{ color: "#27AE60" }}>
+          O que muda na prática:
+        </p>
+        <div className="flex items-start gap-3">
+          <span style={{ color: "#27AE60" }} className="mt-0.5 shrink-0">✓</span>
+          <p className="text-sm opacity-90">Quem responde "Não" é redirecionado para oferta de preparação em vez de ser bloqueado</p>
+        </div>
+        <div className="flex items-start gap-3">
+          <span style={{ color: "#27AE60" }} className="mt-0.5 shrink-0">✓</span>
+          <p className="text-sm opacity-90">Texto de abertura do quiz reescrito: aberto para qualquer homem</p>
+        </div>
+        <div className="flex items-start gap-3">
+          <span style={{ color: "#27AE60" }} className="mt-0.5 shrink-0">✓</span>
+          <p className="text-sm opacity-90">Mesma pergunta, resposta diferente — custo zero</p>
+        </div>
+      </div>
     </FadeIn>
   </SlideWrapper>
 );
