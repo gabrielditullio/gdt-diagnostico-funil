@@ -89,13 +89,13 @@ const Slide09DegrauEntrada = () => (
 
     {/* Caixa de destaque - Order Bump */}
     <FadeIn delay={300} className="max-w-2xl mx-auto mb-6">
-      <div className="p-4 rounded-xl border-2" style={{ borderColor: "#D4A853", backgroundColor: "#1A1A0F" }}>
+      <div className="p-4 rounded-xl border-2" style={{ borderColor: "#D4A853", backgroundColor: "#FFF8F0" }}>
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: "rgba(212, 168, 83, 0.2)" }}>
             <RefreshCw size={20} style={{ color: "#D4A853" }} />
           </div>
-          <p className="text-sm md:text-base text-white font-medium">
-            O order bump da Camila <span style={{ color: "#D4A853" }}>(R$29,90)</span> já funciona no Trekking Fit → <strong className="text-white">replicar em todos os produtos</strong>
+          <p className="text-sm md:text-base text-gray-800 font-medium">
+            O order bump da Camila <span style={{ color: "#D4A853" }}>(R$29,90)</span> já funciona no Trekking Fit → <strong className="text-gray-900">replicar em todos os produtos</strong>
           </p>
         </div>
       </div>
