@@ -54,13 +54,13 @@ const Slide00Capa = () => {
       {/* Start Button */}
       <button 
         onClick={handleStart}
-        className="absolute bottom-10 right-10 flex items-center gap-2 group transition-all"
+        className="absolute bottom-10 right-4 md:right-10 flex items-center gap-2 group transition-all"
       >
-        <span className="text-xs font-bold uppercase tracking-widest text-[#666666] group-hover:text-white transition-colors">
+        <span className="text-xs font-bold uppercase tracking-widest text-[#666666] group-hover:text-white transition-colors hidden sm:inline">
           Começar apresentação
         </span>
-        <div className="w-8 h-8 rounded-full border border-[#333333] flex items-center justify-center group-hover:border-[#D35400] group-hover:bg-[#D35400]/10 transition-all">
-          <ArrowRight size={14} className="text-[#666666] group-hover:text-[#D35400] transition-colors" />
+        <div className="w-10 h-10 md:w-8 md:h-8 rounded-full border border-[#333333] flex items-center justify-center group-hover:border-[#D35400] group-hover:bg-[#D35400]/10 transition-all">
+          <ArrowRight size={20} className="text-[#666666] group-hover:text-[#D35400] transition-colors md:w-3.5 md:h-3.5" />
         </div>
       </button>
     </SlideWrapper>
