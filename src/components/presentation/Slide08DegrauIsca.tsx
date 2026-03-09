@@ -3,7 +3,6 @@ import FadeIn from "./FadeIn";
 import { Badge } from "@/components/ui/badge";
 import StairIndicator from "./StairIndicator";
 import TabsLinhas from "./TabsLinhas";
-import AccordionEntregaveis from "./AccordionEntregaveis";
 import FooterQuote from "./FooterQuote";
 import { ArrowRight, Smartphone, Mail, FileText, CheckCircle2, Check } from "lucide-react";
 
@@ -206,17 +205,7 @@ const Slide08DegrauIsca = () => (
     </FadeIn>
 
     <FadeIn delay={500} className="w-full max-w-2xl mx-auto mt-auto">
-      <AccordionEntregaveis 
-        title="O que será construído neste degrau"
-        items={[
-          "2 PDFs com design profissional e conteúdo real (GG + Trekking aberto)",
-          "2 landing pages prontas e publicadas",
-          "Sistema de email configurado para armazenar contatos",
-          "10 emails automáticos escritos (5 por linha) — a novela que vende sozinha",
-          "Integração: quem baixa a isca do Trekking e demonstra interesse no Legendários é direcionado pro quiz existente"
-        ]}
-      />
-      <FooterQuote text="Se o Instagram acabar amanhã, você ainda tem o contato dele." className="mt-4" />
+      <FooterQuote text="Se o Instagram acabar amanhã, você ainda tem o contato dele." />
     </FadeIn>
   </SlideWrapper>
 );

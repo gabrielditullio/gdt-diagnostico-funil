@@ -2,7 +2,6 @@ import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
 import { Badge } from "@/components/ui/badge";
 import StairIndicator from "./StairIndicator";
-import AccordionEntregaveis from "./AccordionEntregaveis";
 import FooterQuote from "./FooterQuote";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -187,17 +186,7 @@ const Slide12DegrauComunidade = () => (
     </FadeIn>
 
     <FadeIn delay={1100} className="w-full max-w-2xl mx-auto mt-auto">
-      <AccordionEntregaveis 
-        title="O que será construído neste degrau"
-        items={[
-          "Plataforma configurada (Telegram/Discord/Hotmart)",
-          "Estrutura de conteúdo do primeiro mês",
-          "Página de vendas da comunidade",
-          "Cobrança recorrente configurada",
-          "Integração: comprador do Protocolo recebe oferta automática"
-        ]}
-      />
-      <FooterQuote text="Sem lançar nada novo, sem campanha, sem stress." className="mt-6" />
+      <FooterQuote text="Sem lançar nada novo, sem campanha, sem stress." />
     </FadeIn>
   </SlideWrapper>
 );

@@ -3,7 +3,6 @@ import FadeIn from "./FadeIn";
 import { Badge } from "@/components/ui/badge";
 import StairIndicator from "./StairIndicator";
 import TabsLinhas from "./TabsLinhas";
-import AccordionEntregaveis from "./AccordionEntregaveis";
 import FooterQuote from "./FooterQuote";
 import { PlayCircle, CreditCard, RefreshCw } from "lucide-react";
 
@@ -153,16 +152,7 @@ const Slide09DegrauEntrada = () => (
     </div>
 
     <FadeIn delay={600} className="w-full max-w-2xl mx-auto mt-auto">
-      <AccordionEntregaveis 
-        title="O que será construído neste degrau"
-        items={[
-          "2 páginas de venda com vídeo curto (3-5 min)",
-          "Configuração de order bumps cruzados (GG ↔ Trekking) + replicação do bump da Camila (R$29,90) que já funciona",
-          "Configuração de upsell pós-compra",
-          "NOTA: Os produtos JÁ existem na Hotmart — o trabalho é criar a estrada até eles"
-        ]}
-      />
-      <FooterQuote text="Quem pagou uma vez, paga de novo." className="mt-4" />
+      <FooterQuote text="Quem pagou uma vez, paga de novo." />
     </FadeIn>
   </SlideWrapper>
 );

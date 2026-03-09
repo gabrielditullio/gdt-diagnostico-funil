@@ -1,6 +1,5 @@
 import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
-import AccordionEntregaveis from "./AccordionEntregaveis";
 import { ArrowUp, ArrowRight, Check, CheckCheck } from "lucide-react";
 
 const Slide07EscadaCompleta = () => (
@@ -266,18 +265,6 @@ const Slide07EscadaCompleta = () => (
         </div>
       </FadeIn>
 
-      {/* Accordion Deliverables */}
-      <FadeIn delay={3600}>
-        <AccordionEntregaveis
-          title="Entregáveis da Escada Completa"
-          items={[
-            "Mapa visual da escada com o que já existe vs. o que precisa criar",
-            "Dos 6 degraus: 3 já existem, 3 precisam ser criados",
-            "Explicação de como cada produto existente se encaixa na jornada"
-          ]}
-          className="max-w-2xl mx-auto"
-        />
-      </FadeIn>
 
     </div>
   </SlideWrapper>

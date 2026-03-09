@@ -3,7 +3,6 @@ import FadeIn from "./FadeIn";
 import { Badge } from "@/components/ui/badge";
 import StairIndicator from "./StairIndicator";
 import TabsLinhas from "./TabsLinhas";
-import AccordionEntregaveis from "./AccordionEntregaveis";
 import { Shield, CheckCheck, Star, Info } from "lucide-react";
 
 const tabs = [
@@ -158,17 +157,6 @@ const Slide10DegrauPrograma = () => (
       <TabsLinhas tabs={tabs} />
     </FadeIn>
 
-    <FadeIn delay={500} className="w-full max-w-2xl mx-auto mt-auto">
-      <AccordionEntregaveis 
-        title="O que será construído neste degrau"
-        items={[
-          "Roteiro do webinar de 60 min para Protocolo GG",
-          "Página de inscrição + venda com Stack visual",
-          "Emails de convite e follow-up pós-aula",
-          "NOTA: Para o Trekking Fit, o funil JÁ EXISTE. O trabalho é remover o bloqueio e expandir o alcance"
-        ]}
-      />
-    </FadeIn>
   </SlideWrapper>
 );
 

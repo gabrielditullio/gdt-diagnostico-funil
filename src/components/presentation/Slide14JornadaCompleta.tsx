@@ -1,7 +1,6 @@
 import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
 import { Badge } from "@/components/ui/badge";
-import AccordionEntregaveis from "./AccordionEntregaveis";
 import FooterQuote from "./FooterQuote";
 import { ArrowDown, GitMerge } from "lucide-react";
 
@@ -207,16 +206,7 @@ const Slide14JornadaCompleta = () => (
     </div>
 
     <FadeIn delay={1600} className="w-full max-w-2xl mx-auto mt-10">
-      <AccordionEntregaveis 
-        title="Como usar este slide"
-        items={[
-          "Este slide é o resumo visual de toda a estratégia",
-          "Pode ser impresso como poster A3 para planejamento",
-          "Use para explicar a jornada completa para investidores ou parceiros",
-          "Identifique onde cada lead está e para onde deve ir"
-        ]}
-      />
-      <FooterQuote text="Dois caminhos de entrada. Um ecossistema. Uma máquina." className="mt-6" />
+      <FooterQuote text="Dois caminhos de entrada. Um ecossistema. Uma máquina." />
     </FadeIn>
   </SlideWrapper>
 );
