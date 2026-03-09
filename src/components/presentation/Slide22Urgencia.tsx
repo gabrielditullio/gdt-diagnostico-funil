@@ -1,7 +1,7 @@
 import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, XCircle, GitBranch } from "lucide-react";
+import { CheckCircle2, XCircle, GitBranch, AlertTriangle } from "lucide-react";
 
 const scenarioA = [
   "Escada completa funcionando",
@@ -14,7 +14,6 @@ const scenarioA = [
 const scenarioB = [
   "Mesmos 49K seguidores em 1 ano",
   "Zero emails capturados",
-  "Outro personal planta a bandeira",
   "Site continua fora do ar",
   "Oportunidade Léo Santana desperdiçada"
 ];
@@ -28,7 +27,7 @@ const Slide22Urgencia = () => (
     </FadeIn>
 
     {/* Fork Visual */}
-    <FadeIn delay={300} className="w-full max-w-6xl mx-auto mb-12">
+    <FadeIn delay={300} className="w-full max-w-6xl mx-auto mb-8">
       {/* Ponto Central */}
       <div className="flex justify-center mb-8">
         <div 
@@ -94,6 +93,32 @@ const Slide22Urgencia = () => (
               ))}
             </CardContent>
           </Card>
+        </div>
+      </div>
+    </FadeIn>
+
+    {/* Card de Alerta — Risco #1 */}
+    <FadeIn delay={1000} className="w-full max-w-6xl mx-auto mb-8">
+      <div 
+        className="p-6 rounded-xl border-2"
+        style={{ 
+          borderColor: "#C0392B",
+          background: "linear-gradient(135deg, #1A0A0A, #2A0A0A)"
+        }}
+      >
+        <div className="flex flex-col items-center text-center gap-4">
+          <AlertTriangle 
+            size={32} 
+            className="animate-pulse"
+            style={{ color: "#C0392B", animationDuration: "2s" }} 
+          />
+          <p className="text-lg font-bold" style={{ color: "#C0392B" }}>O RISCO #1</p>
+          <p className="text-sm md:text-base text-white leading-relaxed max-w-2xl">
+            O Legendários está explodindo AGORA. Daqui a 6 meses, algum outro personal vai perceber essa oportunidade e plantar a bandeira de "preparador físico oficial". Quem chegar primeiro, domina.
+          </p>
+          <p className="text-sm italic opacity-70 text-gray-300">
+            A janela está aberta. Não vai ficar aberta pra sempre.
+          </p>
         </div>
       </div>
     </FadeIn>
