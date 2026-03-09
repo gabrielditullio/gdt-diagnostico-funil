@@ -8,7 +8,7 @@ import { DollarSign, Youtube, Mountain, ArrowDown, Mail, TrendingUp } from "luci
 const Slide17Youtube = () => (
   <SlideWrapper theme="light">
     <FadeIn>
-      <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 text-gray-900">
+      <h2 className="text-center mb-4 text-gray-900 font-bold" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
         De Onde Vem o Povo
       </h2>
       <p className="text-center text-gray-600 text-sm md:text-base mb-12">
