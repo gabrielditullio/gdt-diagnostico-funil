@@ -7,7 +7,7 @@ import { DollarSign, Users, TrendingUp, Target } from "lucide-react";
 const Slide21Risco = () => (
   <SlideWrapper theme="light">
     <FadeIn>
-      <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 text-gray-900">
+      <h2 className="text-center mb-4 text-gray-900 font-bold" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
         O que Esperar — Sem Vender Ilusão
       </h2>
     </FadeIn>
@@ -128,11 +128,12 @@ const Slide21Risco = () => (
 
     {/* Totais Gigantes */}
     <FadeIn delay={700} className="w-full max-w-4xl mx-auto mb-8">
-      <div className="text-center p-8 rounded-xl border-2" style={{ borderColor: "#D35400", background: "linear-gradient(135deg, #FEF5EB, #FEF0E0)" }}>
-        <p className="text-lg font-bold text-gray-700 mb-2">Total Mensal (Mês 6):</p>
+      <div className="text-center p-6 md:p-8 rounded-xl border-2" style={{ borderColor: "#D35400", background: "linear-gradient(135deg, #FEF5EB, #FEF0E0)" }}>
+        <p className="text-base md:text-lg font-bold text-gray-700 mb-2">Total Mensal (Mês 6):</p>
         <p 
-          className="text-4xl md:text-6xl font-black mb-6"
+          className="font-black mb-4 md:mb-6"
           style={{ 
+            fontSize: "clamp(1.75rem, 6vw, 3.75rem)",
             color: "#D35400",
             textShadow: "0 0 20px rgba(211, 84, 0, 0.3)"
           }}
@@ -140,12 +141,13 @@ const Slide21Risco = () => (
           R$33.000 — R$55.000
         </p>
         
-        <div className="h-px bg-gradient-to-r from-transparent via-orange-300 to-transparent my-6" />
+        <div className="h-px bg-gradient-to-r from-transparent via-orange-300 to-transparent my-4 md:my-6" />
         
-        <p className="text-lg font-bold text-gray-700 mb-2">Total Anual:</p>
+        <p className="text-base md:text-lg font-bold text-gray-700 mb-2">Total Anual:</p>
         <p 
-          className="text-4xl md:text-6xl font-black"
+          className="font-black"
           style={{ 
+            fontSize: "clamp(1.75rem, 6vw, 3.75rem)",
             color: "#27AE60",
             textShadow: "0 0 20px rgba(39, 174, 96, 0.3)"
           }}

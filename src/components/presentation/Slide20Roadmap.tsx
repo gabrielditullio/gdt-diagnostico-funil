@@ -45,7 +45,7 @@ const phases = [
 const Slide20Roadmap = () => (
   <SlideWrapper theme="light">
     <FadeIn>
-      <h2 className="text-3xl md:text-5xl font-bold text-center mb-3 text-gray-900">
+      <h2 className="text-center mb-3 text-gray-900 font-bold" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
         O que Acontece Primeiro, Segundo e Terceiro
       </h2>
       <p className="text-center text-gray-600 text-sm md:text-base mb-12">

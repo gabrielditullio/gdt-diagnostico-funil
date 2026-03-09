@@ -21,7 +21,7 @@ const Slide15TrekkingFit = () => (
     </FadeIn>
 
     <FadeIn delay={200}>
-      <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-gray-900">
+      <h2 className="text-center mb-12 text-gray-900 font-bold" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
         Tem UMA coisa que dá pra fazer AMANHÃ
       </h2>
     </FadeIn>

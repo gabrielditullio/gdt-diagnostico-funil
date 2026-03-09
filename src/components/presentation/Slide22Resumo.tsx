@@ -22,7 +22,7 @@ const scenarioB = [
 const Slide22Resumo = () => (
   <SlideWrapper theme="dark">
     <FadeIn>
-      <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">
+      <h2 className="text-center mb-12 font-bold" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
         O que Acontece se Nada Mudar?
       </h2>
     </FadeIn>

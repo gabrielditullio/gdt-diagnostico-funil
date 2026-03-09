@@ -82,8 +82,8 @@ const FelipeMarinho = () => {
         ))}
       </div>
 
-      {/* Progress dots — right side */}
-      <div className="fixed right-3 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1.5">
+      {/* Progress dots — right side (hidden on mobile) */}
+      <div className="fixed right-3 top-1/2 -translate-y-1/2 z-50 flex-col gap-1.5 hidden md:flex">
         {slides.map((_, i) => (
           <button
             key={i}

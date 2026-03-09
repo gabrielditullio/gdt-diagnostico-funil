@@ -62,7 +62,7 @@ const JourneyStation = ({
 const Slide14MarcaPessoal = () => (
   <SlideWrapper theme="dark">
     <FadeIn>
-      <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">
+      <h2 className="text-center mb-4 font-bold text-gray-900" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
         De Desconhecido a Cliente Premium
       </h2>
       <p className="text-center text-gray-400 text-sm md:text-base mb-10">

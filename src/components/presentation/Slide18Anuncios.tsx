@@ -17,14 +17,14 @@ const Slide18Anuncios = () => {
 
   return (
     <SlideWrapper theme="dark">
-      <FadeIn>
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-3">
-          A Bruxa do Treino: Sua História Vende
-        </h2>
-        <p className="text-center text-gray-400 text-sm md:text-base mb-12">
-          As pessoas não compram de empresas. Compram de <span className="font-black text-white">PESSOAS.</span>
-        </p>
-      </FadeIn>
+    <FadeIn>
+      <h2 className="text-center mb-3 font-bold" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
+        A Bruxa do Treino: Sua História Vende
+      </h2>
+      <p className="text-center text-gray-400 text-sm md:text-base mb-12">
+        As pessoas não compram de empresas. Compram de <span className="font-black text-white">PESSOAS.</span>
+      </p>
+    </FadeIn>
 
       {/* Timeline Horizontal */}
       <FadeIn delay={300} className="w-full max-w-5xl mx-auto mb-12 overflow-x-auto">

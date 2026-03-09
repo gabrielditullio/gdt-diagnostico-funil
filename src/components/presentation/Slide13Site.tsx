@@ -7,7 +7,7 @@ import { Dumbbell, Apple, Crown } from "lucide-react";
 const Slide13Site = () => (
   <SlideWrapper theme="light">
     <FadeIn>
-      <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-gray-900">
+      <h2 className="text-center mb-12 text-gray-900 font-bold" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
         O Trunfo: Felipe + Camila = Dupla Imbatível
       </h2>
     </FadeIn>
