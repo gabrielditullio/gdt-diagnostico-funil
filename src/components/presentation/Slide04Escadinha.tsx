@@ -132,6 +132,15 @@ const Slide04Escadinha = () => (
         </div>
       </FadeIn>
 
+      <FadeIn delay={650}>
+        <p
+          className="text-base md:text-lg text-[#CCCCCC] leading-relaxed"
+          style={{ backgroundColor: "#1A1A1A", padding: "16px", borderLeft: "3px solid #D35400" }}
+        >
+          E a beleza é que você JÁ atende o Thiago com o Trekking Fit. O que falta é abrir a porta pro Marcos — e parar de bloquear os Thiagos que ainda não subiram a montanha.
+        </p>
+      </FadeIn>
+
     </div>
   </SlideWrapper>
 );
