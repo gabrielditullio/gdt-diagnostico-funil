@@ -1,6 +1,5 @@
 import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
-import AccordionEntregaveis from "./AccordionEntregaveis";
 import FooterQuote from "./FooterQuote";
 import { UserCircle, ArrowRight, Check, Lock, X, WifiOff } from "lucide-react";
 
@@ -48,13 +47,6 @@ const Slide01Abertura = () => (
           </FadeIn>
         </div>
 
-        <FadeIn delay={900}>
-          <AccordionEntregaveis
-            title="Diagnóstico documentado da situação real"
-            items={["Diagnóstico documentado da situação real — preciso, com dados verificados."]}
-            className="mt-8"
-          />
-        </FadeIn>
       </div>
 
       {/* Right Column - Visual */}

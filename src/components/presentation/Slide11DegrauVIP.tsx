@@ -2,7 +2,6 @@ import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
 import { Badge } from "@/components/ui/badge";
 import StairIndicator from "./StairIndicator";
-import AccordionEntregaveis from "./AccordionEntregaveis";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Lock, Calendar, MessageSquare, Video, User, Target, Check, CheckCircle2, ArrowDown } from "lucide-react";
@@ -161,27 +160,6 @@ const Slide11DegrauVIP = () => (
       </div>
     </FadeIn>
 
-    <FadeIn delay={900} className="w-full max-w-2xl mx-auto mt-auto space-y-3">
-      <AccordionEntregaveis 
-        title="Entregáveis da Consultoria VIP"
-        items={[
-          "Página de aplicação com vídeo e formulário",
-          "Roteiro da ligação de qualificação",
-          "Script de venda para a call",
-          "Emails para compradores convidando para aplicar"
-        ]}
-      />
-      <div style={{ borderLeft: "3px solid #27AE60", borderRadius: "8px" }}>
-        <AccordionEntregaveis 
-          title="Integração Felipe + Camila"
-          items={[
-            "Copy de cross-sell Felipe + Camila para todos os checkouts da escada",
-            "Replicação do order bump da Camila (R$29,90) em todos os produtos",
-            "Integração dos perfis: link da bio de Camila → ecossistema Felipe e vice-versa"
-          ]}
-        />
-      </div>
-    </FadeIn>
   </SlideWrapper>
 );
 

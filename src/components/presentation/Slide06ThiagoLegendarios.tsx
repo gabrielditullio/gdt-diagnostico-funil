@@ -2,7 +2,6 @@ import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
 import StatCard from "./StatCard";
 import FooterQuote from "./FooterQuote";
-import AccordionEntregaveis from "./AccordionEntregaveis";
 import { Mountain, Calendar, Users, HeartCrack, Check, Lock } from "lucide-react";
 
 const Slide06ThiagoLegendarios = () => (
@@ -132,17 +131,6 @@ const Slide06ThiagoLegendarios = () => (
           />
         </FadeIn>
 
-        <FadeIn delay={900}>
-          <AccordionEntregaveis
-            title="Diagnóstico e Recomendações"
-            items={[
-              "Mapeamento completo do mercado Legendários com dados",
-              "Diagnóstico de como o quiz fechado limita vendas", 
-              "Recomendação: abrir o funil para qualquer homem que queira se preparar"
-            ]}
-            className="max-w-3xl mx-auto"
-          />
-        </FadeIn>
       </div>
 
     </div>
