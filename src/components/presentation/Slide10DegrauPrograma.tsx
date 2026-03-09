@@ -122,7 +122,7 @@ const tabs = [
   }
 ];
 
-const Slide10ComunidadeGG = () => (
+const Slide10DegrauPrograma = () => (
   <SlideWrapper theme="dark">
     <div className="flex justify-between items-start mb-4">
       <FadeIn>
