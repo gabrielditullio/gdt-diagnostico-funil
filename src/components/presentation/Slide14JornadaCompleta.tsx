@@ -59,7 +59,7 @@ const JourneyStation = ({
   </FadeIn>
 );
 
-const Slide14MarcaPessoal = () => (
+const Slide14JornadaCompleta = () => (
   <SlideWrapper theme="dark">
     <FadeIn>
       <h2 className="text-center mb-4 font-bold text-gray-900" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
@@ -221,4 +221,4 @@ const Slide14MarcaPessoal = () => (
   </SlideWrapper>
 );
 
-export default Slide14MarcaPessoal;
+export default Slide14JornadaCompleta;

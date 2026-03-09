@@ -11,7 +11,7 @@ const BAR_COLORS_STAIR = [
   "#8C3600",
 ];
 
-const Slide03DoisPublicos = () => (
+const Slide03ComoDeveriaSer = () => (
   <SlideWrapper theme="light">
     <div className="w-full max-w-5xl mx-auto flex flex-col gap-10">
 
@@ -112,4 +112,4 @@ const Slide03DoisPublicos = () => (
   </SlideWrapper>
 );
 
-export default Slide03DoisPublicos;
+export default Slide03ComoDeveriaSer;

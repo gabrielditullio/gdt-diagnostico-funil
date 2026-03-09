@@ -208,7 +208,7 @@ const LeakyBucket = () => {
   return <canvas ref={canvasRef} width={300} height={320} className="mx-auto" />;
 };
 
-const Slide02Legendarios = () => (
+const Slide02BaldeFurado = () => (
   <SlideWrapper theme="dark">
     <div className="w-full max-w-5xl mx-auto space-y-12">
       
@@ -292,4 +292,4 @@ const Slide02Legendarios = () => (
   </SlideWrapper>
 );
 
-export default Slide02Legendarios;
+export default Slide02BaldeFurado;

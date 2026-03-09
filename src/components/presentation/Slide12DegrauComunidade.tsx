@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Users, TrendingUp, Crown } from "lucide-react";
 
-const Slide12Trafego = () => (
+const Slide12DegrauComunidade = () => (
   <SlideWrapper theme="dark">
     <div className="flex justify-between items-start mb-8">
       <FadeIn>
@@ -202,4 +202,4 @@ const Slide12Trafego = () => (
   </SlideWrapper>
 );
 
-export default Slide12Trafego;
+export default Slide12DegrauComunidade;

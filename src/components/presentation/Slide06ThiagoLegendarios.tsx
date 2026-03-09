@@ -5,7 +5,7 @@ import FooterQuote from "./FooterQuote";
 import AccordionEntregaveis from "./AccordionEntregaveis";
 import { Mountain, Calendar, Users, HeartCrack, Check, Lock } from "lucide-react";
 
-const Slide06EmailsAutomaticos = () => (
+const Slide06ThiagoLegendarios = () => (
   <SlideWrapper theme="light">
     <div className="w-full max-w-6xl mx-auto flex flex-col gap-12">
       
@@ -142,4 +142,4 @@ const Slide06EmailsAutomaticos = () => (
   </SlideWrapper>
 );
 
-export default Slide06EmailsAutomaticos;
+export default Slide06ThiagoLegendarios;

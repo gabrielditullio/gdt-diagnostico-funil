@@ -3,7 +3,7 @@ import FadeIn from "./FadeIn";
 import AccordionEntregaveis from "./AccordionEntregaveis";
 import { ArrowUp, ArrowRight, Check, CheckCheck } from "lucide-react";
 
-const Slide07ProdutoEntrada = () => (
+const Slide07EscadaCompleta = () => (
   <SlideWrapper theme="dark">
     <div className="w-full max-w-6xl mx-auto flex flex-col gap-12">
       
@@ -283,4 +283,4 @@ const Slide07ProdutoEntrada = () => (
   </SlideWrapper>
 );
 
-export default Slide07ProdutoEntrada;
+export default Slide07EscadaCompleta;

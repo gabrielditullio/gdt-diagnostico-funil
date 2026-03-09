@@ -19,7 +19,7 @@ const scenarioB = [
   "Oportunidade Léo Santana desperdiçada"
 ];
 
-const Slide22Resumo = () => (
+const Slide22Urgencia = () => (
   <SlideWrapper theme="dark">
     <FadeIn>
       <h2 className="text-center mb-12 font-bold" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
@@ -114,4 +114,4 @@ const Slide22Resumo = () => (
   </SlideWrapper>
 );
 
-export default Slide22Resumo;
+export default Slide22Urgencia;

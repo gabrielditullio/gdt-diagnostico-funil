@@ -12,7 +12,7 @@ const timelinePoints = [
   { icon: Rocket, label: "Explosão digital", detail: "Do presencial para o mundo. A mesma intensidade, em escala." }
 ];
 
-const Slide18Anuncios = () => {
+const Slide18MarcaPessoal = () => {
   const [activePoint, setActivePoint] = useState<number | null>(null);
 
   return (
@@ -87,4 +87,4 @@ const Slide18Anuncios = () => {
   );
 };
 
-export default Slide18Anuncios;
+export default Slide18MarcaPessoal;

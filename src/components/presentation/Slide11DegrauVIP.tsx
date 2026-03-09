@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Lock, Calendar, MessageSquare, Video, User, Target, Check, CheckCircle2, ArrowDown } from "lucide-react";
 
-const Slide11FelipeCamila = () => (
+const Slide11DegrauVIP = () => (
   <SlideWrapper theme="dark">
     <div className="flex justify-between items-start mb-6">
       <FadeIn>
@@ -175,4 +175,4 @@ const Slide11FelipeCamila = () => (
   </SlideWrapper>
 );
 
-export default Slide11FelipeCamila;
+export default Slide11DegrauVIP;

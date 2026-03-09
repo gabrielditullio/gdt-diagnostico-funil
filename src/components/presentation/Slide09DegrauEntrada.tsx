@@ -56,7 +56,7 @@ const tabs = [
   }
 ];
 
-const Slide09ConsultoriaVIP = () => (
+const Slide09DegrauEntrada = () => (
   <SlideWrapper theme="light">
     <div className="flex justify-between items-start mb-4">
       <FadeIn>
@@ -167,4 +167,4 @@ const Slide09ConsultoriaVIP = () => (
   </SlideWrapper>
 );
 
-export default Slide09ConsultoriaVIP;
+export default Slide09DegrauEntrada;

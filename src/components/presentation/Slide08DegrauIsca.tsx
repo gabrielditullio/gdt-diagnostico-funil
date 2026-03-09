@@ -122,7 +122,7 @@ const tabs = [
   }
 ];
 
-const Slide08ProgramaCompleto = () => (
+const Slide08DegrauIsca = () => (
   <SlideWrapper theme="light">
     <div className="flex justify-between items-start mb-4">
       <FadeIn>
@@ -221,4 +221,4 @@ const Slide08ProgramaCompleto = () => (
   </SlideWrapper>
 );
 
-export default Slide08ProgramaCompleto;
+export default Slide08DegrauIsca;

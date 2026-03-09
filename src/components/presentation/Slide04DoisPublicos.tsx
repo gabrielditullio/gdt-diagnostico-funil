@@ -14,7 +14,7 @@ const thiagoBullets = [
   { icon: Mountain, text: "Precisa aguentar 72h com 14kg nas costas" },
 ];
 
-const Slide04Escadinha = () => (
+const Slide04DoisPublicos = () => (
   <SlideWrapper theme="dark">
     <div className="w-full max-w-6xl mx-auto flex flex-col gap-8">
 
@@ -145,4 +145,4 @@ const Slide04Escadinha = () => (
   </SlideWrapper>
 );
 
-export default Slide04Escadinha;
+export default Slide04DoisPublicos;
