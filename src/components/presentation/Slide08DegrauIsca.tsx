@@ -46,12 +46,12 @@ const tabs = [
               <div className="text-[9px] text-gray-500">Aqui está seu PDF...</div>
             </div>
           </div>
-          <div className="flex gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100 shadow-sm">
+          <div className="flex gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100 shadow-sm overflow-hidden">
             <div className="w-10 h-12 bg-red-100 rounded-md flex items-center justify-center shrink-0">
               <FileText size={20} className="text-red-500" />
             </div>
-            <div className="flex-1 flex flex-col justify-center">
-              <div className="text-[10px] font-bold text-gray-800 line-clamp-2 leading-tight mb-1">
+            <div className="flex-1 min-w-0 flex flex-col justify-center">
+              <div className="text-[10px] font-bold text-gray-800 truncate leading-tight mb-1">
                 3_Exercicios_LeoSantana.pdf
               </div>
               <div className="text-[9px] text-gray-400">1.2 MB</div>
