@@ -11,7 +11,7 @@ const tabs = [
     label: "Protocolo GG",
     color: "#D35400",
     content: (
-      <div className="flex flex-col items-center py-6 space-y-4 relative">
+      <div className="flex flex-col items-center py-6 space-y-4 relative rounded-xl" style={{ border: "2px dashed rgba(211, 84, 0, 0.5)" }}>
         {/* Badge "PRECISA DE FUNIL NOVO" */}
         <div className="absolute top-2 right-2">
           <span className="text-[10px] font-bold px-2 py-1 rounded border-2 border-dashed" style={{ borderColor: "#D35400", color: "#D35400" }}>
