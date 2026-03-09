@@ -5,7 +5,19 @@ import { Dumbbell, Calendar, Smartphone, HeartCrack, Check, Clock, Glasses, Scal
 const Slide05Marcos = () => (
   <SlideWrapper theme="light">
     <div className="w-full max-w-4xl mx-auto flex flex-col items-center gap-8 relative">
-      
+
+      {/* Persona label + bridge text */}
+      <div className="flex flex-col items-center gap-3 mb-2">
+        <span className="uppercase tracking-[3px] text-xs font-bold" style={{ color: "#999" }}>
+          PERSONA 1 DE 2
+        </span>
+        <FadeIn>
+          <p className="text-lg italic opacity-80 text-center" style={{ color: "#666" }}>
+            Vamos conhecer cada um de perto.
+          </p>
+        </FadeIn>
+      </div>
+
       {/* Floating decorative icons */}
       <div className="absolute inset-0 pointer-events-none">
         <Clock 
