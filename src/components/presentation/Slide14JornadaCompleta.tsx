@@ -61,7 +61,7 @@ const JourneyStation = ({
 const Slide14JornadaCompleta = () => (
   <SlideWrapper theme="dark">
     <FadeIn>
-      <h2 className="text-center mb-4 font-bold text-gray-900" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
+      <h2 className="text-center mb-4 font-bold text-white" style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
         De Desconhecido a Cliente Premium
       </h2>
       <p className="text-center text-gray-400 text-sm md:text-base mb-10">
