@@ -161,9 +161,9 @@ const Slide11DegrauVIP = () => (
       </div>
     </FadeIn>
 
-    <FadeIn delay={900} className="w-full max-w-2xl mx-auto mt-auto">
+    <FadeIn delay={900} className="w-full max-w-2xl mx-auto mt-auto space-y-3">
       <AccordionEntregaveis 
-        title="O que será construído neste degrau"
+        title="Entregáveis da Consultoria VIP"
         items={[
           "Página de aplicação com vídeo e formulário",
           "Roteiro da ligação de qualificação",
@@ -171,6 +171,16 @@ const Slide11DegrauVIP = () => (
           "Emails para compradores convidando para aplicar"
         ]}
       />
+      <div style={{ borderLeft: "3px solid #27AE60", borderRadius: "8px" }}>
+        <AccordionEntregaveis 
+          title="Integração Felipe + Camila"
+          items={[
+            "Copy de cross-sell Felipe + Camila para todos os checkouts da escada",
+            "Replicação do order bump da Camila (R$29,90) em todos os produtos",
+            "Integração dos perfis: link da bio de Camila → ecossistema Felipe e vice-versa"
+          ]}
+        />
+      </div>
     </FadeIn>
   </SlideWrapper>
 );
