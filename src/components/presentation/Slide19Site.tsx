@@ -2,7 +2,7 @@ import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import AccordionEntregaveis from "./AccordionEntregaveis";
+
 import { AlertTriangle, Smartphone, Monitor, Instagram, Youtube } from "lucide-react";
 
 const Slide19Site = () => (
@@ -147,18 +147,6 @@ const Slide19Site = () => (
       </p>
     </FadeIn>
 
-    <FadeIn delay={900} className="w-full max-w-2xl mx-auto">
-      <AccordionEntregaveis
-        title="O que será construído"
-        items={[
-          "Site publicado e funcional",
-          "Responsivo (mobile-first)",
-          "Formulário de captura integrado",
-          "Links pros produtos pela ordem da escada",
-          "SEO básico configurado"
-        ]}
-      />
-    </FadeIn>
   </SlideWrapper>
 );
 

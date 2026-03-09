@@ -2,7 +2,7 @@ import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import AccordionEntregaveis from "./AccordionEntregaveis";
+
 import { DollarSign, Youtube, Mountain, ArrowDown, Mail, TrendingUp } from "lucide-react";
 
 const Slide17Trafego = () => (
@@ -145,18 +145,6 @@ const Slide17Trafego = () => (
       </div>
     </FadeIn>
 
-    <FadeIn delay={1000} className="w-full max-w-3xl mx-auto mt-10">
-      <AccordionEntregaveis 
-        title="O que será construído"
-        items={[
-          "Plano de anúncios para 60 dias (criativos + copy + budget)",
-          "5 roteiros de vídeos de anúncio (15-30s) testados",
-          "8 títulos e roteiros prontos pro YouTube",
-          "Estratégia de abordagem do Legendários (quando e como ofertar)",
-          "Cronograma de publicação semanal integrado"
-        ]}
-      />
-    </FadeIn>
   </SlideWrapper>
 );
 

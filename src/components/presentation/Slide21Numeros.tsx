@@ -1,7 +1,7 @@
 import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
 import { Card, CardContent } from "@/components/ui/card";
-import AccordionEntregaveis from "./AccordionEntregaveis";
+
 import { DollarSign, Users, TrendingUp, Target } from "lucide-react";
 
 const Slide21Numeros = () => (
@@ -164,16 +164,6 @@ const Slide21Numeros = () => (
       </p>
     </FadeIn>
 
-    <FadeIn delay={1000} className="w-full max-w-2xl mx-auto">
-      <AccordionEntregaveis
-        title="Ferramentas de acompanhamento"
-        items={[
-          "Planilha financeira mês a mês com cenários",
-          "Dashboard de 5 KPIs semanais (leads, conversão, receita, comunidade, CAC)",
-          "Meta trimestral clara e realista"
-        ]}
-      />
-    </FadeIn>
   </SlideWrapper>
 );
 
