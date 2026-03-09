@@ -110,8 +110,9 @@ const Slide06EmailsAutomaticos = () => (
           >
             <div className="flex flex-col items-center gap-4">
               <Lock size={48} style={{ color: "#C0392B" }} />
+              <p className="text-sm text-[#666666] mb-2">Quiz funciona — mas bloqueia quem nunca foi ao Legendários</p>
               <p className="text-lg text-[#1A1A1A] font-medium leading-relaxed max-w-2xl">
-                O Trekking Fit está trancado atrás de um quiz que só avança se a pessoa já for do Legendários.
+                Você já atende esse público com o quiz do Trekking Fit — e funciona. O problema é que você só vende pra quem JÁ participou. Os milhares de homens que estão se preparando pra ir pela primeira vez? Porta fechada. E esses são os que MAIS precisam de preparação física.
               </p>
             </div>
           </div>
