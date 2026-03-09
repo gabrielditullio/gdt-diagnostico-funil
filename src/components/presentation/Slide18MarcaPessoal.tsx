@@ -27,7 +27,7 @@ const Slide18MarcaPessoal = () => {
     </FadeIn>
 
       {/* Timeline Horizontal */}
-      <FadeIn delay={300} className="w-full max-w-5xl mx-auto mb-12 overflow-x-auto">
+      <FadeIn delay={300} className="w-full max-w-5xl mx-auto mb-6 overflow-x-auto">
         <div className="relative flex items-start justify-between min-w-[600px] px-4">
           {/* Linha tracejada */}
           <div className="absolute top-6 left-8 right-8 h-0.5 border-t-2 border-dashed border-white/20" />
@@ -44,21 +44,27 @@ const Slide18MarcaPessoal = () => {
                   <Icon size={20} className="text-white" />
                 </button>
                 <p className="text-xs text-center font-semibold max-w-[120px] leading-tight">{point.label}</p>
-
-                {activePoint === i && (
-                  <div
-                    className="absolute top-20 w-48 p-3 rounded-lg text-xs text-center leading-relaxed animate-fade-in"
-                    style={{ backgroundColor: "#1A1A1A", border: "1px solid #D35400" }}
-                  >
-                    {point.detail}
-                  </div>
-                )}
               </FadeIn>
             );
           })}
         </div>
         <p className="text-center text-xs text-gray-500 mt-4">Toque nos ícones para ver detalhes</p>
       </FadeIn>
+
+      {/* Detail box — outside timeline, fixed height */}
+      {activePoint !== null && (
+        <FadeIn className="w-full max-w-2xl mx-auto mb-6">
+          <div
+            className="p-5 rounded-xl text-center text-sm md:text-base leading-relaxed animate-fade-in"
+            style={{ backgroundColor: "#1A1A1A", border: "1px solid #D35400" }}
+          >
+            <p className="font-semibold mb-1" style={{ color: "#D35400" }}>
+              {timelinePoints[activePoint].label}
+            </p>
+            <p className="text-gray-300">{timelinePoints[activePoint].detail}</p>
+          </div>
+        </FadeIn>
+      )}
 
       {/* Citação */}
       <FadeIn delay={1200} className="w-full max-w-3xl mx-auto mb-10">
