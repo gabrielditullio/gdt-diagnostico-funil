@@ -95,7 +95,7 @@ const tabs = [
           <FadeIn delay={250}>
             <div className="p-5 rounded-xl border-2 text-center relative" style={{ borderColor: "#27AE60", backgroundColor: "#0A1A0A" }}>
               <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-[10px] font-bold px-3 py-0.5 rounded-full flex items-center gap-1 whitespace-nowrap" style={{ backgroundColor: "#27AE60", color: "white" }}>
-                <Star size={10} /> Mais escolhido
+                <Star size={10} /> Melhor custo-benefício
               </span>
               <p className="text-sm font-bold text-white mb-2 mt-1">Trimestral</p>
               <p className="text-2xl font-black" style={{ color: "#27AE60" }}>R$597</p>
