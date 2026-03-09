@@ -1,6 +1,7 @@
 import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
 import FooterQuote from "./FooterQuote";
+import { Check, WifiOff } from "lucide-react";
 
 const BAR_COLORS_STAIR = [
   "#F0C080",
@@ -29,27 +30,31 @@ const Slide03DoisPublicos = () => (
             <div className="p-6 flex-1 flex flex-col gap-6">
 
               <div className="flex items-center gap-3">
-                <span className="text-2xl">😰</span>
+                <span className="text-2xl">🤔</span>
                 <h3 className="text-lg font-bold text-[#1A1A1A]">Como funciona hoje</h3>
               </div>
 
-              {/* Visual: single tall bar */}
-              <div className="flex flex-col items-center justify-end gap-2 h-44 bg-[#FDF2F2] rounded-lg p-4">
-                <span className="text-sm font-bold text-[#C0392B]">R$ 297</span>
-                <div
-                  className="w-16 rounded-t-md"
-                  style={{ height: "100px", backgroundColor: "#C0392B" }}
-                />
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-6 bg-[#EEEEEE] rounded-sm flex items-center justify-center">
-                    <span className="text-[10px] text-[#888888] font-medium">R$ 0</span>
+              {/* Visual: 1 green tall bar + 5 gray low bars */}
+              <div className="flex items-end justify-center gap-2 h-44 bg-[#FDF2F2] rounded-lg p-4">
+                <div className="flex flex-col items-center gap-1">
+                  <div className="w-10 rounded-t-md flex items-start justify-center pt-1" style={{ height: "110px", backgroundColor: "#27AE60" }}>
+                    <Check size={14} className="text-white" />
                   </div>
-                  <span className="text-[10px] text-[#C0392B] mt-1 font-bold uppercase tracking-wider">Salto direto</span>
+                  <span className="text-[9px] font-bold text-[#27AE60]">Trekking Fit</span>
+                  <span className="text-[9px] font-bold text-[#27AE60]">R$297-997</span>
                 </div>
+
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="flex flex-col items-center gap-1 opacity-40">
+                    <div className="w-8 rounded-t-md flex items-center justify-center" style={{ height: `${30 + (i % 2) * 8}px`, backgroundColor: "#999999" }}>
+                      <WifiOff size={12} className="text-[#666666]" />
+                    </div>
+                  </div>
+                ))}
               </div>
 
               <p className="text-sm text-[#666666] text-center">
-                Desconhecido → R$297. <strong className="text-[#1A1A1A]">Sem caminho intermediário.</strong>
+                Um funil que funciona bem — mas só para ex-Legendários. E 5 produtos sem caminho de venda. Todo o público que não se encaixa nesse funil... vai embora.
               </p>
             </div>
           </div>
@@ -88,7 +93,7 @@ const Slide03DoisPublicos = () => (
               </div>
 
               <p className="text-sm text-[#666666] text-center">
-                <strong className="text-[#1A1A1A]">Cada degrau prepara pro próximo.</strong>
+                Uma escada com degraus. DOIS caminhos de entrada — um pra quem quer shape, outro pra quem quer montanha. Aproveitando o que já funciona e desbloqueando tudo que está parado.
               </p>
             </div>
           </div>
@@ -98,7 +103,7 @@ const Slide03DoisPublicos = () => (
       {/* Footer Quote */}
       <FadeIn delay={500}>
         <FooterQuote
-          text="O que eu vou te mostrar agora é essa escada montada especificamente para o seu negócio."
+          text="O que eu vou te mostrar agora é essa escada montada especificamente para o teu negócio — aproveitando o que já funciona e desbloqueando tudo que está parado."
           className="text-base md:text-lg"
         />
       </FadeIn>
