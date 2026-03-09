@@ -222,29 +222,29 @@ const Slide02BaldeFurado = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
         {/* Visual: Bucket + Indicators */}
-        <FadeIn delay={150} className="flex items-center justify-center gap-8 bg-[#141414] rounded-2xl p-8 border border-[#222]">
+        <FadeIn delay={150} className="flex items-center justify-center gap-8 bg-[#141414] rounded-2xl p-10 border border-[#222]">
           <LeakyBucket />
           
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-8 min-w-[140px]">
             {/* Indicator 1 - Captured (Green) */}
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "#27AE60" }}>
+              <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: "#27AE60" }}>
                 <Check size={20} className="text-white" />
               </div>
               <div>
                 <p className="text-sm font-bold text-white">Capturados</p>
-                <p className="text-xs mt-0.5" style={{ color: "#27AE60" }}>Parcela dos<br/>ex-Legendários</p>
+                <p className="text-xs mt-1" style={{ color: "#27AE60" }}>Parcela dos<br/>ex-Legendários</p>
               </div>
             </div>
 
             {/* Indicator 2 - Lost (Red, LARGER) */}
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ backgroundColor: "#C0392B" }}>
+              <div className="w-14 h-14 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: "#C0392B" }}>
                 <X size={28} className="text-white" />
               </div>
               <div>
-                <p className="text-xl font-black" style={{ color: "#C0392B" }}>Perdidos</p>
-                <p className="text-sm font-bold mt-0.5" style={{ color: "#E74C3C" }}>Milhares/mês</p>
+                <p className="text-xl font-black whitespace-nowrap" style={{ color: "#C0392B" }}>Perdidos</p>
+                <p className="text-sm font-bold mt-1 whitespace-nowrap" style={{ color: "#E74C3C" }}>Milhares/mês</p>
               </div>
             </div>
           </div>
