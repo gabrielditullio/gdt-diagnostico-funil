@@ -19,15 +19,15 @@ const Slide23CTA = () => (
         {/* CARD 1 - Continuar como está */}
         <FadeIn delay={400}>
           <Card 
-            className="border-2 hover:opacity-100 transition-opacity"
-            style={{ borderColor: "#999", backgroundColor: "#FAFAFA" }}
+            className="border hover:scale-105 transition-all"
+            style={{ borderColor: "#555", backgroundColor: "#1C1C1C" }}
           >
             <CardContent className="p-6">
               <div className="text-5xl mb-4 text-center">⏸️</div>
-              <h3 className="text-xl font-black text-center mb-4" style={{ color: "#666666" }}>
+              <h3 className="text-xl font-black text-center mb-4" style={{ color: "#999999" }}>
                 Continuar como está
               </h3>
-              <p className="text-sm leading-relaxed text-center" style={{ color: "#555555" }}>
+              <p className="text-sm leading-relaxed text-center" style={{ color: "#CCCCCC" }}>
                 Continuar com o quiz do Trekking funcionando para ex-Legendários, e os outros 5 produtos sem caminho de venda. Funciona parcialmente, mas o crescimento é limitado e você perde a maioria do público que te descobre.
               </p>
             </CardContent>
@@ -38,14 +38,14 @@ const Slide23CTA = () => (
         <FadeIn delay={500}>
           <Card 
             className="border-2 hover:scale-105 transition-all"
-            style={{ borderColor: "#3498DB" }}
+            style={{ borderColor: "#3498DB", backgroundColor: "#1C1C1C" }}
           >
             <CardContent className="p-6">
               <div className="text-5xl mb-4 text-center">🔧</div>
               <h3 className="text-xl font-black text-center mb-4" style={{ color: "#3498DB" }}>
                 Montar sozinho
               </h3>
-              <p className="text-sm leading-relaxed text-center" style={{ color: "#444444" }}>
+              <p className="text-sm leading-relaxed text-center" style={{ color: "#CCCCCC" }}>
                 É possível. Vai levar mais tempo, vai ter mais erro, mas tudo que está nesse documento pode ser pesquisado e implementado.
               </p>
             </CardContent>
@@ -55,10 +55,11 @@ const Slide23CTA = () => (
         {/* CARD 3 - A gente monta junto (DESTACADO) */}
         <FadeIn delay={600}>
           <Card 
-            className="border-4 relative shadow-2xl md:hover:scale-110 transition-all"
+            className="border-2 relative md:hover:scale-110 transition-all"
             style={{ 
-              borderColor: "#D35400",
-              boxShadow: "0 10px 40px -10px rgba(211, 84, 0, 0.4)"
+              borderColor: "#D4A853",
+              backgroundColor: "#1C1C1C",
+              boxShadow: "0 0 20px rgba(212, 168, 83, 0.15)"
             }}
           >
             <Badge 
@@ -73,7 +74,7 @@ const Slide23CTA = () => (
               <h3 className="text-xl font-black text-center mb-4" style={{ color: "#D35400" }}>
                 A gente monta junto
               </h3>
-              <p className="text-sm leading-relaxed text-center font-medium" style={{ color: "#333333" }}>
+              <p className="text-sm leading-relaxed text-center" style={{ color: "#CCCCCC" }}>
                 Eu pego essa arquitetura inteira e transformo em realidade. Você foca no que faz de melhor: treinar e transformar corpos. Eu cuido da engenharia por trás.
               </p>
             </CardContent>
