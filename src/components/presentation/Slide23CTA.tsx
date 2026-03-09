@@ -19,15 +19,15 @@ const Slide23CTA = () => (
         {/* CARD 1 - Continuar como está */}
         <FadeIn delay={400}>
           <Card 
-            className="border-2 opacity-75 hover:opacity-100 transition-opacity"
-            style={{ borderColor: "#999" }}
+            className="border-2 hover:opacity-100 transition-opacity"
+            style={{ borderColor: "#999", backgroundColor: "#FAFAFA" }}
           >
             <CardContent className="p-6">
               <div className="text-5xl mb-4 text-center">⏸️</div>
-              <h3 className="text-xl font-black text-center mb-4 text-gray-800">
+              <h3 className="text-xl font-black text-center mb-4" style={{ color: "#666666" }}>
                 Continuar como está
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed text-center">
+              <p className="text-sm leading-relaxed text-center" style={{ color: "#555555" }}>
                 Continuar com o quiz do Trekking funcionando para ex-Legendários, e os outros 5 produtos sem caminho de venda. Funciona parcialmente, mas o crescimento é limitado e você perde a maioria do público que te descobre.
               </p>
             </CardContent>
@@ -45,7 +45,7 @@ const Slide23CTA = () => (
               <h3 className="text-xl font-black text-center mb-4" style={{ color: "#3498DB" }}>
                 Montar sozinho
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed text-center">
+              <p className="text-sm leading-relaxed text-center" style={{ color: "#444444" }}>
                 É possível. Vai levar mais tempo, vai ter mais erro, mas tudo que está nesse documento pode ser pesquisado e implementado.
               </p>
             </CardContent>
@@ -73,7 +73,7 @@ const Slide23CTA = () => (
               <h3 className="text-xl font-black text-center mb-4" style={{ color: "#D35400" }}>
                 A gente monta junto
               </h3>
-              <p className="text-sm text-gray-700 leading-relaxed text-center font-medium">
+              <p className="text-sm leading-relaxed text-center font-medium" style={{ color: "#333333" }}>
                 Eu pego essa arquitetura inteira e transformo em realidade. Você foca no que faz de melhor: treinar e transformar corpos. Eu cuido da engenharia por trás.
               </p>
             </CardContent>
