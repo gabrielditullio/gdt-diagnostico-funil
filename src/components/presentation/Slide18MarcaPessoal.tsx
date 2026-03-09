@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
-import AccordionEntregaveis from "./AccordionEntregaveis";
+
 import { Palmtree, Trophy, Star, Cog, Rocket } from "lucide-react";
 
 const timelinePoints = [
@@ -100,17 +100,6 @@ const Slide18MarcaPessoal = () => {
         </div>
       </FadeIn>
 
-      <FadeIn delay={1600} className="w-full max-w-2xl mx-auto">
-        <AccordionEntregaveis
-          title="O que será construído neste degrau"
-          items={[
-            "Roteiro da história de origem — texto completo",
-            "5 mini-histórias reutilizáveis para conteúdo",
-            "Posicionamento de marca: frases-chave, tom de voz",
-            "Manifesto GG — parágrafo-resumo da missão"
-          ]}
-        />
-      </FadeIn>
     </SlideWrapper>
   );
 };

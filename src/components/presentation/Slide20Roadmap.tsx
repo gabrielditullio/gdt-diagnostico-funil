@@ -1,7 +1,7 @@
 import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
 import { Badge } from "@/components/ui/badge";
-import AccordionEntregaveis from "./AccordionEntregaveis";
+
 import { Zap } from "lucide-react";
 
 const phases = [
@@ -154,18 +154,6 @@ const Slide20Roadmap = () => (
       ))}
     </div>
 
-    <FadeIn delay={1600} className="w-full max-w-2xl mx-auto mt-8">
-      <AccordionEntregaveis
-        title="O que cada fase resolve"
-        items={[
-          "Semana 1: vendas do Trekking começam a crescer sem gastar nada",
-          "Fase 1: infraestrutura de captura funcionando, site no ar",
-          "Fase 2: primeiros compradores de frontend, tráfego pago rodando",
-          "Fase 3: programa completo vendendo via webinar, consultoria VIP aberta",
-          "Fase 4: comunidade gerando receita recorrente, ecossistema completo"
-        ]}
-      />
-    </FadeIn>
   </SlideWrapper>
 );
 

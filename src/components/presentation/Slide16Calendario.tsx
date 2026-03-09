@@ -2,7 +2,7 @@ import SlideWrapper from "./SlideWrapper";
 import FadeIn from "./FadeIn";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import AccordionEntregaveis from "./AccordionEntregaveis";
+
 import { Mountain, ArrowLeft, ArrowRight, RefreshCw } from "lucide-react";
 
 const months = [
@@ -124,17 +124,6 @@ const Slide16Calendario = () => (
       </div>
     </FadeIn>
 
-    <FadeIn delay={1000} className="w-full max-w-2xl mx-auto">
-      <AccordionEntregaveis 
-        title="O que será construído"
-        items={[
-          "Calendário de campanhas completo para 12 meses",
-          "Template reutilizável para cada retiro (email + anúncio + post)",
-          "Scripts de vendas adaptados para cada mês",
-          "Checklist de preparação pré-retiro"
-        ]}
-      />
-    </FadeIn>
   </SlideWrapper>
 );
 
