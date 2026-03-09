@@ -110,13 +110,19 @@ const Slide23CTA = () => (
       </p>
 
       {/* Botão CTA */}
-      <Button 
-        size="lg"
-        className="mt-8 px-8 py-6 text-lg font-black hover:scale-110 transition-all"
-        style={{ backgroundColor: "#D35400" }}
+      <a 
+        href="https://api.whatsapp.com/send/?phone=5511996035995&text=Gabriel%2C+vi+o+diagn%C3%B3stico+e+quero+marcar+uma+reuni%C3%A3o&type=phone_number&app_absent=0"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        Agendar Conversa
-      </Button>
+        <Button 
+          size="lg"
+          className="mt-8 px-8 py-6 text-lg font-black hover:scale-110 transition-all"
+          style={{ backgroundColor: "#D35400" }}
+        >
+          Agendar Conversa
+        </Button>
+      </a>
     </FadeIn>
   </SlideWrapper>
 );
