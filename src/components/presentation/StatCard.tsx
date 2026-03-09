@@ -19,7 +19,9 @@ const StatCard = ({ number, label, className = "" }: StatCardProps) => {
       { threshold: 0.3 }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+    // Fallback: if observer doesn't fire within 500ms, start anyway
+    const fallback = setTimeout(() => setStarted(true), 500);
+    return () => { obs.disconnect(); clearTimeout(fallback); };
   }, []);
 
   useEffect(() => {

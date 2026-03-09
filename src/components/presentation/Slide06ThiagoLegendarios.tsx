@@ -8,7 +8,14 @@ import { Mountain, Calendar, Users, HeartCrack, Check, Lock } from "lucide-react
 const Slide06ThiagoLegendarios = () => (
   <SlideWrapper theme="light">
     <div className="w-full max-w-6xl mx-auto flex flex-col gap-12">
-      
+
+      {/* Persona label */}
+      <div className="flex flex-col items-center mb-2">
+        <span className="uppercase tracking-[3px] text-xs font-bold" style={{ color: "#999" }}>
+          PERSONA 2 DE 2
+        </span>
+      </div>
+
       {/* PARTE 1 - Avatar Thiago */}
       <FadeIn>
         <div 
