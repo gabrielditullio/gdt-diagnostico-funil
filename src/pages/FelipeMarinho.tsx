@@ -75,7 +75,7 @@ const FelipeMarinho = () => {
       <div
         ref={containerRef}
         className="w-full h-full overflow-y-auto"
-        style={{ scrollSnapType: "y mandatory" }}
+        style={{ scrollSnapType: "y proximity" }}
       >
         {slides.map((SlideComponent, i) => (
           <SlideComponent key={i} />

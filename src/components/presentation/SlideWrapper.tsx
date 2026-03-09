@@ -12,7 +12,7 @@ const SlideWrapper = ({ theme = "dark", children, className = "" }: SlideWrapper
 
   return (
     <section
-      className={`min-h-screen w-full snap-start snap-always relative flex flex-col ${className}`}
+      className={`min-h-screen w-full snap-start relative flex flex-col ${className}`}
       style={{
         backgroundColor: isDark ? "#0A0A0A" : "#F5F5F5",
         color: isDark ? "#FFFFFF" : "#1A1A1A",
