@@ -41,24 +41,13 @@ const Slide07EscadaCompleta = () => (
               >
                 A CRIAR
               </div>
-              <div 
-                className="w-full md:w-28 rounded-t-lg relative overflow-hidden"
-                style={{ height: "80px" }}
-              >
-                <div className="absolute inset-0 flex">
-                  <div 
-                    className="flex-1 flex flex-col items-center justify-center text-center p-2"
-                    style={{ backgroundColor: "#D35400" }}
-                  >
-                    <span className="text-[9px] font-medium text-white leading-tight">PDF Shape Gigante</span>
-                  </div>
-                  <div 
-                    className="flex-1 flex flex-col items-center justify-center text-center p-2"
-                    style={{ backgroundColor: "#27AE60" }}
-                  >
-                    <span className="text-[9px] font-medium text-white leading-tight">Checklist Montanha</span>
-                  </div>
-                </div>
+              <div className="flex gap-1 w-full md:w-28 rounded-t-lg overflow-hidden" style={{ height: "80px" }}>
+                <div className="flex-1 rounded-l" style={{ backgroundColor: "#D35400" }} />
+                <div className="flex-1 rounded-r" style={{ backgroundColor: "#27AE60" }} />
+              </div>
+              <div className="flex w-full md:w-28">
+                <span className="flex-1 text-center text-[11px] md:text-xs font-medium" style={{ color: "#D35400" }}>PDF Shape</span>
+                <span className="flex-1 text-center text-[11px] md:text-xs font-medium" style={{ color: "#27AE60" }}>Checklist</span>
               </div>
               <span className="text-xs font-semibold opacity-80">ISCA · Grátis</span>
             </div>
@@ -74,24 +63,13 @@ const Slide07EscadaCompleta = () => (
                 <Check size={12} />
                 JÁ EXISTE
               </div>
-              <div 
-                className="w-full md:w-28 rounded-t-lg relative overflow-hidden"
-                style={{ height: "110px" }}
-              >
-                <div className="absolute inset-0 flex">
-                  <div 
-                    className="flex-1 flex flex-col items-center justify-center text-center p-2"
-                    style={{ backgroundColor: "#D35400" }}
-                  >
-                    <span className="text-[9px] font-medium text-white leading-tight">Dieta do GG R$47</span>
-                  </div>
-                  <div 
-                    className="flex-1 flex flex-col items-center justify-center text-center p-2"
-                    style={{ backgroundColor: "#27AE60" }}
-                  >
-                    <span className="text-[9px] font-medium text-white leading-tight">eBook Trekking R$37</span>
-                  </div>
-                </div>
+              <div className="flex gap-1 w-full md:w-28 rounded-t-lg overflow-hidden" style={{ height: "110px" }}>
+                <div className="flex-1 rounded-l" style={{ backgroundColor: "#D35400" }} />
+                <div className="flex-1 rounded-r" style={{ backgroundColor: "#27AE60" }} />
+              </div>
+              <div className="flex w-full md:w-28">
+                <span className="flex-1 text-center text-[11px] md:text-xs font-medium" style={{ color: "#D35400" }}>Dieta GG R$47</span>
+                <span className="flex-1 text-center text-[11px] md:text-xs font-medium" style={{ color: "#27AE60" }}>eBook R$37</span>
               </div>
               <span className="text-xs font-semibold opacity-80">ENTRADA · R$37-47</span>
               <span className="text-[10px] opacity-50">Hotmart, sem tráfego</span>
@@ -117,24 +95,13 @@ const Slide07EscadaCompleta = () => (
                   FUNCIONA
                 </div>
               </div>
-              <div 
-                className="w-full md:w-28 rounded-t-lg relative overflow-hidden"
-                style={{ height: "150px" }}
-              >
-                <div className="absolute inset-0 flex">
-                  <div 
-                    className="flex-1 flex flex-col items-center justify-center text-center p-2"
-                    style={{ backgroundColor: "#D35400" }}
-                  >
-                    <span className="text-[9px] font-medium text-white leading-tight">Protocolo GG R$297</span>
-                  </div>
-                  <div 
-                    className="flex-1 flex flex-col items-center justify-center text-center p-2"
-                    style={{ backgroundColor: "#27AE60" }}
-                  >
-                    <span className="text-[9px] font-medium text-white leading-tight">Trekking Fit Mensal R$297</span>
-                  </div>
-                </div>
+              <div className="flex gap-1 w-full md:w-28 rounded-t-lg overflow-hidden" style={{ height: "150px" }}>
+                <div className="flex-1 rounded-l" style={{ backgroundColor: "#D35400" }} />
+                <div className="flex-1 rounded-r" style={{ backgroundColor: "#27AE60" }} />
+              </div>
+              <div className="flex w-full md:w-28">
+                <span className="flex-1 text-center text-[11px] md:text-xs font-medium" style={{ color: "#D35400" }}>Protocolo GG</span>
+                <span className="flex-1 text-center text-[11px] md:text-xs font-medium" style={{ color: "#27AE60" }}>Trekking Fit</span>
               </div>
               <span className="text-xs font-semibold opacity-80">PROGRAMA · R$297</span>
             </div>
@@ -150,22 +117,12 @@ const Slide07EscadaCompleta = () => (
                 <CheckCheck size={10} />
                 FUNCIONA
               </div>
-              <div 
-                className="w-full md:w-28 rounded-t-lg relative overflow-hidden"
-                style={{ height: "190px" }}
-              >
-                <div className="absolute inset-0 flex">
-                  <div 
-                    className="w-1/3 opacity-20"
-                    style={{ backgroundColor: "#444444" }}
-                  />
-                  <div 
-                    className="flex-1 flex flex-col items-center justify-center text-center p-2"
-                    style={{ backgroundColor: "#27AE60" }}
-                  >
-                    <span className="text-[8px] font-medium text-white leading-tight">Trekking Fit Trimestral R$597 / Semestral R$997</span>
-                  </div>
-                </div>
+              <div className="flex gap-1 w-full md:w-28 rounded-t-lg overflow-hidden" style={{ height: "190px" }}>
+                <div className="w-1/3 rounded-l opacity-20" style={{ backgroundColor: "#444444" }} />
+                <div className="flex-1 rounded-r" style={{ backgroundColor: "#27AE60" }} />
+              </div>
+              <div className="flex w-full md:w-28">
+                <span className="flex-1 text-center text-[11px] md:text-xs font-medium" style={{ color: "#27AE60" }}>Trekking Fit Tri/Sem</span>
               </div>
               <span className="text-xs font-semibold opacity-80">AVANÇADO · R$597-997</span>
             </div>
@@ -181,14 +138,15 @@ const Slide07EscadaCompleta = () => (
                 A CRIAR
               </div>
               <div 
-                className="w-full md:w-28 rounded-t-lg flex items-center justify-center text-center p-2"
+                className="w-full md:w-28 rounded-t-lg"
                 style={{ 
                   height: "230px",
                   background: "linear-gradient(135deg, #F39C12, #D35400, #27AE60)"
                 }}
-              >
-                <span className="text-[9px] font-medium text-white leading-tight">Consultoria Felipe + Camila<br/>90 dias individual</span>
-              </div>
+              />
+              <span className="text-[11px] md:text-xs font-medium text-center" style={{ color: "#D4A853" }}>
+                Consultoria Felipe + Camila
+              </span>
               <span className="text-xs font-semibold opacity-80">PREMIUM · R$2.997+</span>
             </div>
           </FadeIn>
